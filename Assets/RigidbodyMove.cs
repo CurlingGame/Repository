@@ -6,7 +6,7 @@ using UnityEngine;
 public class RigidbodyMove : MonoBehaviour
 {
     Rigidbody rb;
-    float power = 30f;
+    float power = 200f;
 
     void Start()
     {
