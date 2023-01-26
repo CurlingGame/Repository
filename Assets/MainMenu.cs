@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class MainMenu : MonoBehaviour
 { 
     public GameObject MainPanel;
     public GameObject RulePanel;
     public GameObject page2;
+    public GameObject SettingPanel;
 
 
 
@@ -26,7 +28,8 @@ public class MainMenu : MonoBehaviour
     }
     public void OnClickGameSetting()
     {
-        Debug.Log("환경 설정");
+        MainPanel.SetActive(false);
+        SettingPanel.SetActive(true);
     }
     public void OnClickGameQuit()
     {
@@ -46,6 +49,23 @@ public class MainMenu : MonoBehaviour
     {
         RulePanel.SetActive(true);
         page2.SetActive(false);
+    }
+
+    public void OnClicksettingtomenu()
+    {
+        SettingPanel.SetActive(false);
+        MainPanel.SetActive(true);
+    }
+
+    public void OnClickrule1tomenu()
+    {
+        RulePanel.SetActive(false);
+        MainPanel.SetActive(true);
+    }
+    public void OnClickrule2tomenu()
+    {
+        page2.SetActive(false);
+        MainPanel.SetActive(true);
     }
 
 
