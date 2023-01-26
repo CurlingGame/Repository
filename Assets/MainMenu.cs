@@ -17,10 +17,12 @@ public class MainMenu : MonoBehaviour
     public void OnClickGameRule()
     {
         Debug.Log("게임 방법");
+        SceneManager.LoadScene("Rule Scene");
     }
     public void OnClickGameSetting()
     {
         Debug.Log("환경 설정");
+        SceneManager.LoadScene("Setting Scene");
     }
     public void OnClickGameQuit()
     {
@@ -29,6 +31,12 @@ public class MainMenu : MonoBehaviour
 #else
         Application.Quit();
 #endif
+    }
+    public void OnClickBack()
+    {
+        Debug.Log("뒤로");
+        SceneManager.LoadScene("Sub Scene");
+
     }
     // Start is called before the first frame update
     void Start()
