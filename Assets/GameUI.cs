@@ -7,12 +7,26 @@ public class GameUI : MonoBehaviour
 {
     public GameObject InGameUIPanel;
     public GameObject InGameSettingPanel;
-    public GameObject HouseCam; //카메라 전환 버튼을 눌렀을때 하우스의 상황을 보여줄 카메라
+    public GameObject HouseCam; 
+    public GameObject FrontCam;
+    public GameObject HouseCamButton;
+    public GameObject FrontCamButton;
 
 
-    public void OnClickCamChange()
-    {   //카메라 전환 버튼을 눌렀을때 하우스를 보고 있는 카메라로 카메라 전환
+    public void OnClickHouseCam()
+    {   
+        FrontCam.SetActive(false);
+        HouseCam.SetActive(true);
+        HouseCamButton.SetActive(false);
+        FrontCamButton.SetActive(true);
+    }
 
+    public void OnClickFrontCam()
+    {
+        FrontCam.SetActive(true);
+        HouseCam.SetActive(false);
+        HouseCamButton.SetActive(true);
+        FrontCamButton.SetActive(false);
     }
 
     public void OnClickStart()
