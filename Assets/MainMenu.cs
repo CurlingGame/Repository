@@ -11,14 +11,21 @@ public class MainMenu : MonoBehaviour
     public GameObject RulePanel;
     public GameObject page2;
     public GameObject SettingPanel;
+    public GameObject FrontCam;
+    public GameObject UICanvas;
+    public GameObject GameXButton;
+    public GameObject MenuXButton;
 
 
 
 
     public void OnClickGameStart()
     {
+
+        FrontCam.SetActive(true);
+        MainPanel.SetActive(false);
+        UICanvas.SetActive(true);
         
-        SceneManager.LoadScene("Main Scene");
 
     }
     public void OnClickGameRule()
@@ -30,7 +37,27 @@ public class MainMenu : MonoBehaviour
     {
         MainPanel.SetActive(false);
         SettingPanel.SetActive(true);
+        GameXButton.SetActive(false);
+        MenuXButton.SetActive(true);
     }
+
+    public void OnClickINGameSetting()
+    {
+        
+        SettingPanel.SetActive(true);
+        UICanvas.SetActive(false);
+        GameXButton.SetActive(true);
+        MenuXButton.SetActive(false);
+
+    }
+    public void OnClickGameXButton()
+    {
+        SettingPanel.SetActive(false);
+        UICanvas.SetActive(true);
+    }
+
+
+
     public void OnClickGameQuit()
     {
 #if UNITY_EDITOR
