@@ -16,13 +16,7 @@ public class sound : MonoBehaviour
         if (sound == -40f) masterMixer.SetFloat("BGM", -80);
         else masterMixer.SetFloat("BGM", sound);
     }
-    public void AudioControl1()
-    {
-        float sound = slider.value;
 
-        if (sound == -40f) masterMixer.SetFloat("Master", -80);
-        else masterMixer.SetFloat("Master", sound);
-    }
     public void AudioControl2()
     {
         float sound = slider.value;
