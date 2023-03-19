@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class B_stone_1 : MonoBehaviour
+public class R_stone_1 : MonoBehaviour
 {
-    bool setting = true;                // 스톤을 던지기 전 오브젝트들 위치 초기화 함수를 위한 트리거
+    bool setting = true;               // 스톤을 던지기 전 오브젝트들 위치 초기화 함수를 위한 트리거
     bool play = true;                   // 스톤을 1회성으로 던지기 위한 트리거
     float time = 0;
     public GameObject Lbroom;
@@ -16,6 +16,7 @@ public class B_stone_1 : MonoBehaviour
 
     void Ready()
     {
+        Debug.Log("set");
         FrontCam.SetActive(true);
         UpCam.SetActive(false);                                     // 작동하는 카메라 지정
         transform.position = new Vector3(-19f, 0.6f, 0f);           // 스톤의 위치 초기화
@@ -31,9 +32,9 @@ public class B_stone_1 : MonoBehaviour
 
     void failstone()
     {
-        transform.position = new Vector3(22f, 0.6f, 2f);
+        transform.position = new Vector3(-22f, 0.6f, 2f);
+        /*gameObject.SetActive(false);*/
     }
-    // 스톤을 잘못 던졌을경우 스톤을 비활성화 시키는 코드
 
     void Throw()
     {
@@ -47,7 +48,7 @@ public class B_stone_1 : MonoBehaviour
         // A 지점
         if (play && (pos.x < -11 && Input.GetMouseButton(2)))
         {
-            rb.AddForce(Vector3.right * 5);
+            rb.AddForce(Vector3.right * 6f);
             FrontCam.transform.position = new Vector3(-1.5f + pos.x, 2f, 0f);
         }
         if (Input.GetMouseButtonUp(2))
@@ -87,22 +88,32 @@ public class B_stone_1 : MonoBehaviour
         {
             time++;
             Debug.Log("time");                          // 진행을 위한 시간 추가 ( update문 프레임 단위로 계산 )
-            if (time > 7000)
+            if (time > 6000)
             {
                 Debug.Log("end1 good shot");
-                mainscript.turn = "Blue";
+                mainscript.turn = "Blue1";
             }
             if ((time > 2000) && (pos.x < -10.5f))
             {
                 Debug.Log("end2 shot fail");
                 failstone();
-                mainscript.turn = "Blue";
+                mainscript.turn = "Blue1";
             }
             if ((time > 5000) && (pos.x < 10.5f))
             {
                 Debug.Log("end3 week shot");
+                mainscript.turn = "Blue1";
+            }
+            /*if (pos.x > 19){
+                Debug.Log("end4 strong shot");
+                failstone();
                 mainscript.turn = "Blue";
             }
+            if ((pos.z > 2.3f) || (pos.z < -2.3f)) {
+                Debug.Log("end5 bad control");
+                failstone();
+                mainscript.turn = "Blue";               // 향후 추가할지 고민중인 코든
+            } */
         }
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2156,7 +2156,7 @@ GameObject:
   - component: {fileID: 328886701}
   - component: {fileID: 328886700}
   - component: {fileID: 328886699}
-  - component: {fileID: 328886698}
+  - component: {fileID: 328886704}
   m_Layer: 0
   m_Name: Curiling Stone BLUE 5
   m_TagString: Untagged
@@ -2164,22 +2164,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &328886698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 328886697}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14cc5022be4a6ca49bd1a610b8e6d6d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lbroom: {fileID: 1602660217}
-  Rbroom: {fileID: 667623982}
-  FrontCam: {fileID: 963194225}
-  UpCam: {fileID: 1886080079}
 --- !u!64 &328886699
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2268,7 +2252,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328886697}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.8, y: 0.6, z: -2}
+  m_LocalPosition: {x: -15.8, y: 0.6, z: -2}
   m_LocalScale: {x: 0.291, y: 0.1, z: 0.291}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2279,6 +2263,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &328886704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328886697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d589c516d3c6c98489a033eb66e23aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lbroom: {fileID: 1602660217}
+  Rbroom: {fileID: 667623982}
+  FrontCam: {fileID: 963194225}
+  UpCam: {fileID: 1886080079}
 --- !u!1 &335245800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2575,7 +2575,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357202616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22, y: 0.6, z: -2}
+  m_LocalPosition: {x: -17, y: 0.6, z: -2}
   m_LocalScale: {x: 0.291, y: 0.1, z: 0.291}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4173,7 +4173,7 @@ GameObject:
   - component: {fileID: 645633558}
   - component: {fileID: 645633557}
   - component: {fileID: 645633556}
-  - component: {fileID: 645633555}
+  - component: {fileID: 645633561}
   m_Layer: 0
   m_Name: Curiling Stone RED 3
   m_TagString: Untagged
@@ -4181,22 +4181,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &645633555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645633554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e67523bf84f473c44b55236d997d68cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lbroom: {fileID: 1602660217}
-  Rbroom: {fileID: 667623982}
-  FrontCam: {fileID: 963194225}
-  UpCam: {fileID: 1886080079}
 --- !u!64 &645633556
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4285,7 +4269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645633554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.4, y: 0.6, z: 2}
+  m_LocalPosition: {x: -16.4, y: 0.6, z: 2}
   m_LocalScale: {x: 0.291, y: 0.1, z: 0.291}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4296,6 +4280,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &645633561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645633554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d577bbd318439b4090eac7169e61ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lbroom: {fileID: 1602660217}
+  Rbroom: {fileID: 667623982}
+  FrontCam: {fileID: 963194225}
+  UpCam: {fileID: 1886080079}
 --- !u!1 &652560494
 GameObject:
   m_ObjectHideFlags: 0
@@ -4403,6 +4403,7 @@ Transform:
   - {fileID: 2067117040}
   - {fileID: 265124297}
   - {fileID: 1744059291}
+  - {fileID: 1926417430}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4418,9 +4419,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a257eda1653272429933e3c78718679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rstone: {fileID: 1003532377}
+  Rstone_1: {fileID: 1003532377}
+  Rstone_2: {fileID: 1632946302}
+  Rstone_3: {fileID: 645633554}
+  Rstone_4: {fileID: 1720941532}
+  Rstone_5: {fileID: 1639316391}
+  Rstone_6: {fileID: 1806218346}
   Bstone_1: {fileID: 357202616}
-  turn: Red
+  Bstone_2: {fileID: 1161391505}
+  Bstone_3: {fileID: 1774006094}
+  Bstone_4: {fileID: 1094751235}
+  Bstone_5: {fileID: 328886697}
+  Bstone_6: {fileID: 1951518271}
+  turn: Red1
 --- !u!1 &666162107
 GameObject:
   m_ObjectHideFlags: 0
@@ -6258,7 +6269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003532377}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22, y: 0.6, z: 2}
+  m_LocalPosition: {x: -17, y: 0.6, z: 2}
   m_LocalScale: {x: 0.291, y: 0.1, z: 0.291}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6308,7 +6319,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1003532377}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e67523bf84f473c44b55236d997d68cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 17b02318107ea464084cb40c72bd1846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Lbroom: {fileID: 1602660217}
@@ -6822,7 +6833,7 @@ GameObject:
   - component: {fileID: 1094751239}
   - component: {fileID: 1094751238}
   - component: {fileID: 1094751237}
-  - component: {fileID: 1094751236}
+  - component: {fileID: 1094751242}
   m_Layer: 0
   m_Name: Curiling Stone BLUE 4
   m_TagString: Untagged
@@ -6830,22 +6841,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1094751236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094751235}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14cc5022be4a6ca49bd1a610b8e6d6d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lbroom: {fileID: 1602660217}
-  Rbroom: {fileID: 667623982}
-  FrontCam: {fileID: 963194225}
-  UpCam: {fileID: 1886080079}
 --- !u!64 &1094751237
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6934,7 +6929,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094751235}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.1, y: 0.6, z: -2}
+  m_LocalPosition: {x: -16.1, y: 0.6, z: -2}
   m_LocalScale: {x: 0.291, y: 0.1, z: 0.291}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6945,6 +6940,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1094751242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094751235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff404aac53825e408b73c744700aa2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lbroom: {fileID: 1602660217}
+  Rbroom: {fileID: 667623982}
+  FrontCam: {fileID: 963194225}
+  UpCam: {fileID: 1886080079}
 --- !u!1 &1105201130
 GameObject:
   m_ObjectHideFlags: 0
@@ -7257,7 +7268,7 @@ GameObject:
   - component: {fileID: 1161391509}
   - component: {fileID: 1161391508}
   - component: {fileID: 1161391507}
-  - component: {fileID: 1161391506}
+  - component: {fileID: 1161391512}
   m_Layer: 0
   m_Name: Curiling Stone BLUE 2
   m_TagString: Untagged
@@ -7265,22 +7276,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1161391506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161391505}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14cc5022be4a6ca49bd1a610b8e6d6d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lbroom: {fileID: 1602660217}
-  Rbroom: {fileID: 667623982}
-  FrontCam: {fileID: 963194225}
-  UpCam: {fileID: 1886080079}
 --- !u!64 &1161391507
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7369,7 +7364,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161391505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.7, y: 0.6, z: -2}
+  m_LocalPosition: {x: -16.7, y: 0.6, z: -2}
   m_LocalScale: {x: 0.291, y: 0.1, z: 0.291}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7380,6 +7375,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1161391512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161391505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc0784c57815c0439203480f147f02f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lbroom: {fileID: 1602660217}
+  Rbroom: {fileID: 667623982}
+  FrontCam: {fileID: 963194225}
+  UpCam: {fileID: 1886080079}
 --- !u!1 &1178897524
 GameObject:
   m_ObjectHideFlags: 0
@@ -10791,7 +10802,7 @@ GameObject:
   - component: {fileID: 1632946306}
   - component: {fileID: 1632946305}
   - component: {fileID: 1632946304}
-  - component: {fileID: 1632946303}
+  - component: {fileID: 1632946309}
   m_Layer: 0
   m_Name: Curiling Stone RED 2
   m_TagString: Untagged
@@ -10799,22 +10810,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1632946303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1632946302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e67523bf84f473c44b55236d997d68cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lbroom: {fileID: 1602660217}
-  Rbroom: {fileID: 667623982}
-  FrontCam: {fileID: 963194225}
-  UpCam: {fileID: 1886080079}
 --- !u!64 &1632946304
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10903,7 +10898,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632946302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.7, y: 0.6, z: 2}
+  m_LocalPosition: {x: -16.7, y: 0.6, z: 2}
   m_LocalScale: {x: 0.291, y: 0.1, z: 0.291}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10914,6 +10909,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1632946309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632946302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1e15ec59699df648b91628c8f1987c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lbroom: {fileID: 1602660217}
+  Rbroom: {fileID: 667623982}
+  FrontCam: {fileID: 963194225}
+  UpCam: {fileID: 1886080079}
 --- !u!1 &1639316391
 GameObject:
   m_ObjectHideFlags: 0
@@ -10927,7 +10938,7 @@ GameObject:
   - component: {fileID: 1639316395}
   - component: {fileID: 1639316394}
   - component: {fileID: 1639316393}
-  - component: {fileID: 1639316392}
+  - component: {fileID: 1639316398}
   m_Layer: 0
   m_Name: Curiling Stone RED 5
   m_TagString: Untagged
@@ -10935,22 +10946,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1639316392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1639316391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e67523bf84f473c44b55236d997d68cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lbroom: {fileID: 1602660217}
-  Rbroom: {fileID: 667623982}
-  FrontCam: {fileID: 963194225}
-  UpCam: {fileID: 1886080079}
 --- !u!64 &1639316393
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11039,7 +11034,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639316391}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.8, y: 0.6, z: 2}
+  m_LocalPosition: {x: -15.8, y: 0.6, z: 2}
   m_LocalScale: {x: 0.291, y: 0.1, z: 0.291}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11050,6 +11045,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1639316398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639316391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6102623073bcfc44eb270c1278650629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lbroom: {fileID: 1602660217}
+  Rbroom: {fileID: 667623982}
+  FrontCam: {fileID: 963194225}
+  UpCam: {fileID: 1886080079}
 --- !u!1 &1681658556
 GameObject:
   m_ObjectHideFlags: 0
@@ -11287,7 +11298,7 @@ GameObject:
   - component: {fileID: 1720941536}
   - component: {fileID: 1720941535}
   - component: {fileID: 1720941534}
-  - component: {fileID: 1720941533}
+  - component: {fileID: 1720941539}
   m_Layer: 0
   m_Name: Curiling Stone RED 4
   m_TagString: Untagged
@@ -11295,22 +11306,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1720941533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720941532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e67523bf84f473c44b55236d997d68cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lbroom: {fileID: 1602660217}
-  Rbroom: {fileID: 667623982}
-  FrontCam: {fileID: 963194225}
-  UpCam: {fileID: 1886080079}
 --- !u!64 &1720941534
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11399,7 +11394,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1720941532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.1, y: 0.6, z: 2}
+  m_LocalPosition: {x: -16.1, y: 0.6, z: 2}
   m_LocalScale: {x: 0.291, y: 0.1, z: 0.291}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11410,6 +11405,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1720941539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720941532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6de7454ca839524b9c2bef4df67cab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lbroom: {fileID: 1602660217}
+  Rbroom: {fileID: 667623982}
+  FrontCam: {fileID: 963194225}
+  UpCam: {fileID: 1886080079}
 --- !u!1 &1744059290
 GameObject:
   m_ObjectHideFlags: 0
@@ -11521,7 +11532,7 @@ GameObject:
   - component: {fileID: 1774006098}
   - component: {fileID: 1774006097}
   - component: {fileID: 1774006096}
-  - component: {fileID: 1774006095}
+  - component: {fileID: 1774006101}
   m_Layer: 0
   m_Name: Curiling Stone BLUE 3
   m_TagString: Untagged
@@ -11529,22 +11540,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1774006095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1774006094}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14cc5022be4a6ca49bd1a610b8e6d6d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lbroom: {fileID: 1602660217}
-  Rbroom: {fileID: 667623982}
-  FrontCam: {fileID: 963194225}
-  UpCam: {fileID: 1886080079}
 --- !u!64 &1774006096
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11633,7 +11628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774006094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.4, y: 0.6, z: -2}
+  m_LocalPosition: {x: -16.4, y: 0.6, z: -2}
   m_LocalScale: {x: 0.291, y: 0.1, z: 0.291}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11644,6 +11639,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1774006101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774006094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02604a97b6e7b7419ccceaaa8dca817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lbroom: {fileID: 1602660217}
+  Rbroom: {fileID: 667623982}
+  FrontCam: {fileID: 963194225}
+  UpCam: {fileID: 1886080079}
 --- !u!1 &1777926878
 GameObject:
   m_ObjectHideFlags: 0
@@ -11971,7 +11982,7 @@ GameObject:
   - component: {fileID: 1806218350}
   - component: {fileID: 1806218349}
   - component: {fileID: 1806218348}
-  - component: {fileID: 1806218347}
+  - component: {fileID: 1806218353}
   m_Layer: 0
   m_Name: Curiling Stone RED 6
   m_TagString: Untagged
@@ -11979,22 +11990,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1806218347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806218346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e67523bf84f473c44b55236d997d68cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lbroom: {fileID: 1602660217}
-  Rbroom: {fileID: 667623982}
-  FrontCam: {fileID: 963194225}
-  UpCam: {fileID: 1886080079}
 --- !u!64 &1806218348
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12083,7 +12078,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806218346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.5, y: 0.6, z: 2}
+  m_LocalPosition: {x: -15.5, y: 0.6, z: 2}
   m_LocalScale: {x: 0.291, y: 0.1, z: 0.291}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12094,6 +12089,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1806218353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806218346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9632a477249ab4fbdd466b29c7d1c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lbroom: {fileID: 1602660217}
+  Rbroom: {fileID: 667623982}
+  FrontCam: {fileID: 963194225}
+  UpCam: {fileID: 1886080079}
 --- !u!1 &1810793729
 GameObject:
   m_ObjectHideFlags: 0
@@ -13267,6 +13278,103 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902453791}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1926417429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1926417430}
+  - component: {fileID: 1926417433}
+  - component: {fileID: 1926417432}
+  - component: {fileID: 1926417431}
+  m_Layer: 0
+  m_Name: Back_wall (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1926417430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926417429}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.4633, y: 0.2, z: 0}
+  m_LocalScale: {x: 0.002222222, y: 1.4, z: 1.02}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 652560499}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1926417431
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926417429}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1926417432
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926417429}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: b6576f5db14befc46afa2af61cfc8243, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1926417433
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926417429}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1935723412
 GameObject:
   m_ObjectHideFlags: 0
@@ -13360,7 +13468,7 @@ GameObject:
   - component: {fileID: 1951518275}
   - component: {fileID: 1951518274}
   - component: {fileID: 1951518273}
-  - component: {fileID: 1951518272}
+  - component: {fileID: 1951518278}
   m_Layer: 0
   m_Name: Curiling Stone BLUE 6
   m_TagString: Untagged
@@ -13368,22 +13476,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1951518272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1951518271}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14cc5022be4a6ca49bd1a610b8e6d6d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lbroom: {fileID: 1602660217}
-  Rbroom: {fileID: 667623982}
-  FrontCam: {fileID: 963194225}
-  UpCam: {fileID: 1886080079}
 --- !u!64 &1951518273
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13472,7 +13564,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951518271}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.5, y: 0.6, z: -2}
+  m_LocalPosition: {x: -15.5, y: 0.6, z: -2}
   m_LocalScale: {x: 0.291, y: 0.1, z: 0.291}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13483,6 +13575,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1951518278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951518271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe581b674b89a54f9be819fd38ef432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lbroom: {fileID: 1602660217}
+  Rbroom: {fileID: 667623982}
+  FrontCam: {fileID: 963194225}
+  UpCam: {fileID: 1886080079}
 --- !u!1 &1955210240
 GameObject:
   m_ObjectHideFlags: 0
