@@ -110,7 +110,7 @@ public class Mainscript : MonoBehaviour
         {
             Transform RStoneTransform = Red[i].transform;
             Vector3 pos = RStoneTransform.position;
-            Nowpos = ((17.1f - pos.x) * (17.1f - pos.x)) + ((0 - pos.y) * (0 - pos.y));
+            Nowpos = Mathf.Sqrt(((17.1f - pos.x) * (17.1f - pos.x)) + ((0 - pos.y) * (0 - pos.y)));
             if (Rpos > Nowpos)
             {
                 Rpos = Nowpos;
@@ -121,12 +121,15 @@ public class Mainscript : MonoBehaviour
         {
             Transform BStoneTransform = Blue[i].transform;
             Vector3 pos = BStoneTransform.position;
-            Nowpos = ((17.1f - pos.x) * (17.1f - pos.x)) + ((0 - pos.y) * (0 - pos.y));
+            Nowpos = Mathf.Sqrt(((17.1f - pos.x) * (17.1f - pos.x)) + ((0 - pos.y) * (0 - pos.y)));
             if (Bpos > Nowpos)
             {
                 Bpos = Nowpos;
             }
         }
+
+        Debug.Log(Rpos);
+        Debug.Log(Bpos);
 
         if (Rpos < Bpos)
         {
