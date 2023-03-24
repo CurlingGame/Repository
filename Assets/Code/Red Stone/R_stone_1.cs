@@ -36,6 +36,15 @@ public class R_stone_1 : MonoBehaviour
         /*gameObject.SetActive(false);*/
     }
 
+    void Throwend() {
+        setting = true;
+        play = true;
+        time = 0;
+        mainscript.turncolor = "Blue";
+        mainscript.Rturn++;
+
+    }
+
     void Throw()
     {
         if (setting) { Ready(); }
@@ -91,18 +100,18 @@ public class R_stone_1 : MonoBehaviour
             if (time > 6000)
             {
                 Debug.Log("end1 good shot");
-                mainscript.turn = "Blue1";
+                Throwend();
             }
             if ((time > 2000) && (pos.x < -10.5f))
             {
                 Debug.Log("end2 shot fail");
                 failstone();
-                mainscript.turn = "Blue1";
+                Throwend();
             }
             if ((time > 5000) && (pos.x < 10.5f))
             {
                 Debug.Log("end3 week shot");
-                mainscript.turn = "Blue1";
+                Throwend();
             }
             /*if (pos.x > 19){
                 Debug.Log("end4 strong shot");

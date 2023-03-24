@@ -22,7 +22,11 @@ public class Mainscript : MonoBehaviour
 
     GameObject[] Blue = new GameObject[7];
 
-    public string turn = "Red1";
+    public int Rturn = 1;
+    public int Bturn = 1;
+    public string turncolor = "Red";
+    public int Rscore = 0;
+    public int Bscore = 0;
 
     void Start()
     {
@@ -39,67 +43,26 @@ public class Mainscript : MonoBehaviour
 
     void Update()
     {
-        if (turn == "Red1")
-        {
-            Red[1].SendMessage("Throw");
+        if ((turncolor == "Red")&&(Rturn < 7)){
+            Red[Rturn].SendMessage("Throw");
         }
-        else if(turn == "Red2")
-        {
-            Red[2].SendMessage("Throw");
+        else if((turncolor == "Blue")&& (Bturn < 7)){
+            Blue[Bturn].SendMessage("Throw");
         }
-        else if(turn == "Red3")
-        {
-            Red[3].SendMessage("Throw");
-        }
-        else if(turn == "Red4")
-        {
-            Red[4].SendMessage("Throw");
-        }
-        else if(turn == "Red5")
-        {
-            Red[5].SendMessage("Throw");
-        }
-        else if(turn == "Red6")
-        {
-            Red[6].SendMessage("Throw");
-        }
-
-
-        else if(turn == "Blue1")
-        {
-            Blue[1].SendMessage("Throw");
-        }
-        else if(turn == "Blue2")
-        {
-            Blue[2].SendMessage("Throw");
-        }
-        else if(turn == "Blue3")
-        {
-            Blue[3].SendMessage("Throw");
-        }
-        else if(turn == "Blue4")
-        {
-            Blue[4].SendMessage("Throw");
-        }
-        else if(turn == "Blue5")
-        {
-            Blue[5].SendMessage("Throw");
-        }
-        else if(turn == "Blue6")
-        {
-            Blue[6].SendMessage("Throw");
-        }
-
 
         else {
             Debug.Log("calc");
             calc();
+            Debug.Log("Red Score: " + Rscore);
+            Debug.Log("Blue Score: " + Bscore);
+            set();
         }
     }
 
     void calc()
     {
         //하우스 중앙의 좌표 x=17.1, z=0
+        //하우스 반지름 길이는 1.93 스톤의 반지름 길이는 0.15 둘이 합쳐 2.08
         //피타고라스 법칙 사용 a^2 + b^2 = C^2 직각 삼각형 일떄 대각선의 길이 구하기
         float Rpos = 100;
         float Bpos = 100;
@@ -110,7 +73,7 @@ public class Mainscript : MonoBehaviour
         {
             Transform RStoneTransform = Red[i].transform;
             Vector3 pos = RStoneTransform.position;
-            Nowpos = Mathf.Sqrt(((17.1f - pos.x) * (17.1f - pos.x)) + ((0 - pos.y) * (0 - pos.y)));
+            Nowpos = Mathf.Sqrt((Mathf.Pow((17.1f - pos.x), 2f) + Mathf.Pow((pos.z), 2f)));
             if (Rpos > Nowpos)
             {
                 Rpos = Nowpos;
@@ -121,23 +84,56 @@ public class Mainscript : MonoBehaviour
         {
             Transform BStoneTransform = Blue[i].transform;
             Vector3 pos = BStoneTransform.position;
-            Nowpos = Mathf.Sqrt(((17.1f - pos.x) * (17.1f - pos.x)) + ((0 - pos.y) * (0 - pos.y)));
+            Nowpos = Mathf.Sqrt((Mathf.Pow((17.1f - pos.x), 2f) + Mathf.Pow((pos.z), 2f)));
             if (Bpos > Nowpos)
             {
                 Bpos = Nowpos;
             }
         }
 
-        Debug.Log(Rpos);
-        Debug.Log(Bpos);
+        Debug.Log("Red: "+Rpos);
+        Debug.Log("Blue: "+Bpos);
 
         if (Rpos < Bpos)
         {
             Debug.Log("RedWin");
+            turncolor = "Red";
+            for (int i = 1; i < Red.Length; i++) {
+                Transform RStoneTransform = Red[i].transform;
+                Vector3 pos = RStoneTransform.position;
+                Nowpos = Mathf.Sqrt((Mathf.Pow((17.1f - pos.x), 2f) + Mathf.Pow((pos.z), 2f)));
+                if (Nowpos < 2.08) {
+                    Rscore++;
+                }
+
+            }
         }
         else {
             Debug.Log("BlueWin");
+            turncolor = "Blue";
+            for (int i = 1; i < Blue.Length; i++){
+                Transform BStoneTransform = Blue[i].transform;
+                Vector3 pos = BStoneTransform.position;
+                Nowpos = Mathf.Sqrt((Mathf.Pow((17.1f - pos.x), 2f) + Mathf.Pow((pos.z), 2f)));
+                if (Nowpos < 2.08)
+                {
+                    Bscore++;
+                }
+            }
+        }
+    }
+
+    void set() 
+    {
+        Rturn = 1;
+        Bturn = 1;
+        for (int i = 1; i < Red.Length; i++) {
+            Red[i].transform.position = new Vector3((-17.3f + (0.3f * i)), 0.6f, 2f);
         }
 
+        for (int i = 1; i < Blue.Length; i++)
+        {
+            Blue[i].transform.position = new Vector3((-17.3f + (0.3f * i)), 0.6f, -2f);
+        }
     }
 }

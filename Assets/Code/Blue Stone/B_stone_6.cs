@@ -35,6 +35,16 @@ public class B_stone_6 : MonoBehaviour
     }
     // 스톤을 잘못 던졌을경우 스톤을 비활성화 시키는 코드
 
+    void Throwend()
+    {
+        setting = true;
+        play = true;
+        time = 0;
+        mainscript.turncolor = "Red";
+        mainscript.Bturn++;
+
+    }
+
     void Throw()
     {
         if (setting) { Ready(); }
@@ -90,18 +100,18 @@ public class B_stone_6 : MonoBehaviour
             if (time > 6000)
             {
                 Debug.Log("end1 good shot");
-                mainscript.turn = "end";
+                Throwend();
             }
             if ((time > 2000) && (pos.x < -10.5f))
             {
                 Debug.Log("end2 shot fail");
                 failstone();
-                mainscript.turn = "end";
+                Throwend();
             }
             if ((time > 5000) && (pos.x < 10.5f))
             {
                 Debug.Log("end3 week shot");
-                mainscript.turn = "end";
+                Throwend();
             }
         }
     }
