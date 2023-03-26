@@ -57,7 +57,7 @@ public class B_stone_6 : MonoBehaviour
         // A ÁöÁ¡
         if (play && (pos.x < -11 && Input.GetMouseButton(2)))
         {
-            rb.AddForce(Vector3.right * 6f);
+            rb.AddForce(Vector3.right * 7f);
             FrontCam.transform.position = new Vector3(-1.5f + pos.x, 2f, 0f);
         }
         if (Input.GetMouseButtonUp(2))

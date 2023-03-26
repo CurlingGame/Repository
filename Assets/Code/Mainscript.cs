@@ -102,7 +102,7 @@ public class Mainscript : MonoBehaviour
                 Transform RStoneTransform = Red[i].transform;
                 Vector3 pos = RStoneTransform.position;
                 Nowpos = Mathf.Sqrt((Mathf.Pow((17.1f - pos.x), 2f) + Mathf.Pow((pos.z), 2f)));
-                if (Nowpos < 2.08) {
+                if (Nowpos < 2f) {
                     Rscore++;
                 }
 
@@ -115,7 +115,7 @@ public class Mainscript : MonoBehaviour
                 Transform BStoneTransform = Blue[i].transform;
                 Vector3 pos = BStoneTransform.position;
                 Nowpos = Mathf.Sqrt((Mathf.Pow((17.1f - pos.x), 2f) + Mathf.Pow((pos.z), 2f)));
-                if (Nowpos < 2.08)
+                if (Nowpos < 2f)
                 {
                     Bscore++;
                 }
