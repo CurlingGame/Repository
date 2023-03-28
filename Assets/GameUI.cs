@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
-    public GameObject InGameUIPanel;
-    public GameObject InGameSettingPanel;
+
     public GameObject HouseCam; 
     public GameObject FrontCam;
     public GameObject HouseCamButton;
     public GameObject FrontCamButton;
+    public GameObject InGameUIPanel;
 
 
     public void OnClickHouseCam()
@@ -34,19 +34,8 @@ public class GameUI : MonoBehaviour
         InGameUIPanel.SetActive(false);
     }
 
-    public void OnClickInGametoSetting()
-    {
-        InGameSettingPanel.SetActive(true);
-        InGameUIPanel.SetActive(false);
 
-    }
 
-    public void OnClickSettingtoInGame()
-    {
-        InGameSettingPanel.SetActive(false);
-        InGameUIPanel.SetActive(true);
-
-    }
 
 
 

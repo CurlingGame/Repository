@@ -45,7 +45,7 @@ public class MainMenu : MonoBehaviour
     {
         
         SettingPanel.SetActive(true);
-        UICanvas.SetActive(false);
+        
         GameXButton.SetActive(true);
         MenuXButton.SetActive(false);
 
@@ -53,7 +53,7 @@ public class MainMenu : MonoBehaviour
     public void OnClickGameXButton()
     {
         SettingPanel.SetActive(false);
-        UICanvas.SetActive(true);
+        
     }
 
 
