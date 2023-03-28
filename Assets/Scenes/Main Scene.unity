@@ -1142,7 +1142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &132989544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3064,12 +3064,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae59c370a187664ea26cb611fff8e96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InGameUIPanel: {fileID: 887472284}
-  InGameSettingPanel: {fileID: 0}
   HouseCam: {fileID: 683742361}
   FrontCam: {fileID: 963194225}
   HouseCamButton: {fileID: 578468538}
   FrontCamButton: {fileID: 227343536}
+  InGameUIPanel: {fileID: 887472284}
 --- !u!1 &399526589
 GameObject:
   m_ObjectHideFlags: 0
