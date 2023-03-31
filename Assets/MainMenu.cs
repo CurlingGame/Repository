@@ -18,6 +18,10 @@ public class MainMenu : MonoBehaviour
     public GameObject UICanvas;
     public GameObject GameXButton;
     public GameObject MenuXButton;
+    public GameObject InGameSetting;
+    public GameObject GameExitButton;
+    public GameObject MenuExitButton;
+
 
 
 
@@ -35,28 +39,10 @@ public class MainMenu : MonoBehaviour
     {
         MainPanel.SetActive(false);
         RulePanel1.SetActive(true);
-    }
-    public void OnClickGameSetting()
-    {
-        MainPanel.SetActive(false);
-        SettingPanel.SetActive(true);
-        GameXButton.SetActive(false);
-        MenuXButton.SetActive(true);
+        GameExitButton.SetActive(false);
+        MenuExitButton.SetActive(true);
     }
 
-    public void OnClickINGameSetting()
-    {
-        
-        SettingPanel.SetActive(true);
-        GameXButton.SetActive(true);
-        MenuXButton.SetActive(false);
-
-    }
-    public void OnClickGameXButton()
-    {
-        SettingPanel.SetActive(false);
-        
-    }
 
 
 
@@ -75,6 +61,7 @@ public class MainMenu : MonoBehaviour
         RulePanel3.SetActive(false);
         RulePanel4.SetActive(false);
         RulePanel5.SetActive(false);
+        
     }
 
     public void OnClick2page()
@@ -129,20 +116,63 @@ public class MainMenu : MonoBehaviour
         MainPanel.SetActive(true);
     }
 
-
-
-
-    // Start is called before the first frame update
-    void Start()
+    public void OnClickINGameSettingChoice()
     {
+        InGameSetting.SetActive(true);
+        UICanvas.SetActive(false);
         
+
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void OnClickGameSetting()
     {
+        MainPanel.SetActive(false);
+        SettingPanel.SetActive(true);
+        GameXButton.SetActive(false);
+        MenuXButton.SetActive(true);
         
     }
+    
+    public void OnClickINGameSetting()
+    {
+
+        SettingPanel.SetActive(true);
+        GameXButton.SetActive(true);
+        MenuXButton.SetActive(false);
+        InGameSetting.SetActive(false);
+
+    }
+    public void OnClickGameXButton()
+    {
+        SettingPanel.SetActive(false);
+        UICanvas.SetActive(true);
+
+    }
+    public void OnClickINGameRule()
+    {
+        RulePanel1.SetActive(true);
+        GameExitButton.SetActive(true);
+        MenuExitButton.SetActive(false);
+        InGameSetting.SetActive(false);
+
+    }
+
+    public void OnClickGameExitButton()
+    {
+        RulePanel1.SetActive(false);
+        RulePanel2.SetActive(false);
+        RulePanel3.SetActive(false);
+        RulePanel4.SetActive(false);
+        RulePanel5.SetActive(false);
+        UICanvas.SetActive(true);
+
+    }
+
+
+
+
+
 
 
 
