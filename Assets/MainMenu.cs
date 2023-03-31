@@ -8,8 +8,11 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 { 
     public GameObject MainPanel;
-    public GameObject RulePanel;
-    public GameObject page2;
+    public GameObject RulePanel1;
+    public GameObject RulePanel2;
+    public GameObject RulePanel3;
+    public GameObject RulePanel4;
+    public GameObject RulePanel5;
     public GameObject SettingPanel;
     public GameObject FrontCam;
     public GameObject UICanvas;
@@ -31,7 +34,7 @@ public class MainMenu : MonoBehaviour
     public void OnClickGameRule()
     {
         MainPanel.SetActive(false);
-        RulePanel.SetActive(true);
+        RulePanel1.SetActive(true);
     }
     public void OnClickGameSetting()
     {
@@ -45,7 +48,6 @@ public class MainMenu : MonoBehaviour
     {
         
         SettingPanel.SetActive(true);
-        
         GameXButton.SetActive(true);
         MenuXButton.SetActive(false);
 
@@ -66,16 +68,49 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
 #endif
     }
-    public void OnClicknextpage()
+    public void OnClick1page()
     {
-        RulePanel.SetActive(false);
-        page2.SetActive(true);
+        RulePanel1.SetActive(true);
+        RulePanel2.SetActive(false);
+        RulePanel3.SetActive(false);
+        RulePanel4.SetActive(false);
+        RulePanel5.SetActive(false);
     }
 
-    public void OnClickbeforepage()
+    public void OnClick2page()
     {
-        RulePanel.SetActive(true);
-        page2.SetActive(false);
+        RulePanel1.SetActive(false);
+        RulePanel2.SetActive(true);
+        RulePanel3.SetActive(false);
+        RulePanel4.SetActive(false);
+        RulePanel5.SetActive(false);
+    }
+
+    public void OnClick3Page()
+    {
+        RulePanel1.SetActive(false);
+        RulePanel2.SetActive(false);
+        RulePanel3.SetActive(true);
+        RulePanel4.SetActive(false);
+        RulePanel5.SetActive(false);
+    }
+
+    public void OnClick4Page()
+    {
+        RulePanel1.SetActive(false);
+        RulePanel2.SetActive(false);
+        RulePanel3.SetActive(false);
+        RulePanel4.SetActive(true);
+        RulePanel5.SetActive(false);
+    }
+
+    public void OnClick5page()
+    {
+        RulePanel1.SetActive(false);
+        RulePanel2.SetActive(false);
+        RulePanel3.SetActive(false);
+        RulePanel4.SetActive(false);
+        RulePanel5.SetActive(true);
     }
 
     public void OnClicksettingtomenu()
@@ -84,16 +119,16 @@ public class MainMenu : MonoBehaviour
         MainPanel.SetActive(true);
     }
 
-    public void OnClickrule1tomenu()
+    public void OnClickRuletomenu()
     {
-        RulePanel.SetActive(false);
+        RulePanel1.SetActive(false);
+        RulePanel2.SetActive(false);
+        RulePanel3.SetActive(false);
+        RulePanel4.SetActive(false);
+        RulePanel5.SetActive(false);
         MainPanel.SetActive(true);
     }
-    public void OnClickrule2tomenu()
-    {
-        page2.SetActive(false);
-        MainPanel.SetActive(true);
-    }
+
 
 
 
