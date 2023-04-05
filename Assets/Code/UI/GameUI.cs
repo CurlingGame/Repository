@@ -19,7 +19,7 @@ public class GameUI : MonoBehaviour
         HouseCam.SetActive(true);
         HouseCamButton.SetActive(false);
         FrontCamButton.SetActive(true);
-        Score_Manager.bscore += 1;
+        
     }
 
     public void OnClickFrontCam()
@@ -28,7 +28,7 @@ public class GameUI : MonoBehaviour
         HouseCam.SetActive(false);
         HouseCamButton.SetActive(true);
         FrontCamButton.SetActive(false);
-        Score_Manager.rscore += 1;
+        
     }
 
     public void OnClickStart()

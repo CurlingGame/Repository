@@ -5,7 +5,7 @@ using UnityEngine;
 public class screen : MonoBehaviour
 {
     // Start is called before the first frame update
-   /* void Awake()
+    /*void Awake()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
@@ -21,5 +21,6 @@ public class screen : MonoBehaviour
     {
         
     }
-   */
+  */
+
 }
