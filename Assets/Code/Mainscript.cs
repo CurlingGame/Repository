@@ -26,6 +26,9 @@ public class Mainscript : MonoBehaviour
     public int Bturn = 1;
     public string turncolor = "Red";
 
+    public static int rscore;
+    public static int bscore;
+
 
     void Start()
     {
@@ -52,8 +55,8 @@ public class Mainscript : MonoBehaviour
         else {
             Debug.Log("calc");
             calc();
-            Debug.Log("Red Score: " + Score_Manager.rscore);
-            Debug.Log("Blue Score: " + Score_Manager.bscore);
+            Debug.Log("Red Score: " + rscore);
+            Debug.Log("Blue Score: " + bscore);
             set();
         }
     }
@@ -102,7 +105,7 @@ public class Mainscript : MonoBehaviour
                 Vector3 pos = RStoneTransform.position;
                 Nowpos = Mathf.Sqrt((Mathf.Pow((17.1f - pos.x), 2f) + Mathf.Pow((pos.z), 2f)));
                 if (Nowpos < 2f) {
-                    Score_Manager.rscore += 1;
+                    rscore += 1;
                 }
 
             }
@@ -116,7 +119,7 @@ public class Mainscript : MonoBehaviour
                 Nowpos = Mathf.Sqrt((Mathf.Pow((17.1f - pos.x), 2f) + Mathf.Pow((pos.z), 2f)));
                 if (Nowpos < 2f)
                 {
-                    Score_Manager.bscore += 1;
+                    bscore += 1;
                 }
             }
         }

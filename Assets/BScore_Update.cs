@@ -18,6 +18,6 @@ public class BScore_Update : MonoBehaviour
     void Update()
     {
         
-        bscoreLabel.text = Score_Manager.bscore.ToString();
+        bscoreLabel.text = Mainscript.bscore.ToString();
     }
 }

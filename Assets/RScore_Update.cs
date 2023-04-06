@@ -15,6 +15,6 @@ public class RScore_Update : MonoBehaviour {
 
     void Update ()
     {
-        rscoreLabel.text = Score_Manager.rscore.ToString();
+        rscoreLabel.text = Mainscript.rscore.ToString();
     }
 }
