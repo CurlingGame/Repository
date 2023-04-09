@@ -21,6 +21,8 @@ public class MainMenu : MonoBehaviour
     public GameObject InGameSetting;
     public GameObject GameExitButton;
     public GameObject MenuExitButton;
+    public GameObject SetChoicetoInGame;
+
 
 
 
@@ -39,7 +41,6 @@ public class MainMenu : MonoBehaviour
     {
         MainPanel.SetActive(false);
         RulePanel1.SetActive(true);
-        GameExitButton.SetActive(false);
         MenuExitButton.SetActive(true);
     }
 
@@ -114,13 +115,15 @@ public class MainMenu : MonoBehaviour
         RulePanel4.SetActive(false);
         RulePanel5.SetActive(false);
         MainPanel.SetActive(true);
+        MenuExitButton.SetActive(false);
     }
 
     public void OnClickINGameSettingChoice()
     {
         InGameSetting.SetActive(true);
         UICanvas.SetActive(false);
-        
+        SetChoicetoInGame.SetActive(true);
+
 
     }
 
@@ -153,7 +156,6 @@ public class MainMenu : MonoBehaviour
     {
         RulePanel1.SetActive(true);
         GameExitButton.SetActive(true);
-        MenuExitButton.SetActive(false);
         InGameSetting.SetActive(false);
 
     }
@@ -165,8 +167,15 @@ public class MainMenu : MonoBehaviour
         RulePanel3.SetActive(false);
         RulePanel4.SetActive(false);
         RulePanel5.SetActive(false);
+        GameExitButton.SetActive(false);
         UICanvas.SetActive(true);
 
+    }
+    public void OnClickSetChoicetoInGame()
+    {
+        SetChoicetoInGame.SetActive(false);
+        InGameSetting.SetActive(false);
+        UICanvas.SetActive(true);
     }
 
 
