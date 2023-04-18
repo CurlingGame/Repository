@@ -8,20 +8,14 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 { 
     public GameObject MainPanel;
+    public GameObject SettingPanel;
+
     public GameObject RulePanel1;
     public GameObject RulePanel2;
     public GameObject RulePanel3;
     public GameObject RulePanel4;
     public GameObject RulePanel5;
-    public GameObject SettingPanel;
-    public GameObject FrontCam;
-    public GameObject UICanvas;
-    public GameObject GameXButton;
-    public GameObject MenuXButton;
-    public GameObject InGameSetting;
-    public GameObject GameExitButton;
-    public GameObject MenuExitButton;
-    public GameObject SetChoicetoInGame;
+    public GameObject RuleExitButton;
 
 
 
@@ -30,31 +24,32 @@ public class MainMenu : MonoBehaviour
 
     public void OnClickGameStart()
     {
-
-        FrontCam.SetActive(true);
-        MainPanel.SetActive(false);
-        UICanvas.SetActive(true);
-        
-
+        SceneManager.LoadScene("Ingame Scene");
     }
+
+
     public void OnClickGameRule()
     {
         MainPanel.SetActive(false);
         RulePanel1.SetActive(true);
-        MenuExitButton.SetActive(true);
+        RuleExitButton.SetActive(true);
     }
 
-
-
-
-    public void OnClickGameQuit()
+    public void OnClickGameSetting()
     {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        MainPanel.SetActive(false);
+        SettingPanel.SetActive(true);
+
     }
+
+    public void OnClickExitSetting()
+    {
+        SettingPanel.SetActive(false);
+        MainPanel.SetActive(true);
+    }
+
+
+    
     public void OnClick1page()
     {
         RulePanel1.SetActive(true);
@@ -101,13 +96,7 @@ public class MainMenu : MonoBehaviour
         RulePanel5.SetActive(true);
     }
 
-    public void OnClicksettingtomenu()
-    {
-        SettingPanel.SetActive(false);
-        MainPanel.SetActive(true);
-    }
-
-    public void OnClickRuletomenu()
+    public void OnClickExitRule()
     {
         RulePanel1.SetActive(false);
         RulePanel2.SetActive(false);
@@ -115,78 +104,21 @@ public class MainMenu : MonoBehaviour
         RulePanel4.SetActive(false);
         RulePanel5.SetActive(false);
         MainPanel.SetActive(true);
-        MenuExitButton.SetActive(false);
+        RuleExitButton.SetActive(false);
+
     }
 
-    public void OnClickINGameSettingChoice()
+
+
+
+    public void OnClickGameQuit()
     {
-        InGameSetting.SetActive(true);
-        UICanvas.SetActive(false);
-        SetChoicetoInGame.SetActive(true);
-
-
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
-
-
-    public void OnClickGameSetting()
-    {
-        MainPanel.SetActive(false);
-        SettingPanel.SetActive(true);
-        GameXButton.SetActive(false);
-        MenuXButton.SetActive(true);
-        
-    }
-    
-    public void OnClickINGameSetting()
-    {
-
-        SettingPanel.SetActive(true);
-        GameXButton.SetActive(true);
-        MenuXButton.SetActive(false);
-        InGameSetting.SetActive(false);
-
-    }
-    public void OnClickGameXButton()
-    {
-        SettingPanel.SetActive(false);
-        UICanvas.SetActive(true);
-
-    }
-    public void OnClickINGameRule()
-    {
-        RulePanel1.SetActive(true);
-        GameExitButton.SetActive(true);
-        InGameSetting.SetActive(false);
-
-    }
-
-    public void OnClickGameExitButton()
-    {
-        RulePanel1.SetActive(false);
-        RulePanel2.SetActive(false);
-        RulePanel3.SetActive(false);
-        RulePanel4.SetActive(false);
-        RulePanel5.SetActive(false);
-        GameExitButton.SetActive(false);
-        UICanvas.SetActive(true);
-
-    }
-    public void OnClickSetChoicetoInGame()
-    {
-        SetChoicetoInGame.SetActive(false);
-        InGameSetting.SetActive(false);
-        UICanvas.SetActive(true);
-    }
-
-
-
-
-
-
-
-
-
-
 
 
 }

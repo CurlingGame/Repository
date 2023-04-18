@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour
 {
@@ -10,7 +11,13 @@ public class GameUI : MonoBehaviour
     public GameObject FrontCam;
     public GameObject HouseCamButton;
     public GameObject FrontCamButton;
-    public GameObject InGameUIPanel;
+    public GameObject InGameUI;
+    public GameObject AudioSetting;
+    public GameObject GameSetting;
+
+
+
+
 
 
     public void OnClickHouseCam()
@@ -35,7 +42,48 @@ public class GameUI : MonoBehaviour
 
     public void OnClickStart()
     {   //스타트 버튼을 누르기 전에는 마우스 휠이 작동되지 않아야함.
-        InGameUIPanel.SetActive(false);
+        InGameUI.SetActive(false);
+    }
+
+
+
+
+    public void OnClickGameSetting()
+    {
+        GameSetting.SetActive(true);
+    }
+
+    public void OnClickExitGameSetting()
+    {
+        GameSetting.SetActive(false);
+    }
+
+
+
+
+
+    public void OnClickAudioSetting()
+    {
+        AudioSetting.SetActive(true);
+    }
+
+
+    public void OnClickExitAudioSetting()
+    {
+        AudioSetting.SetActive(false);
+        GameSetting.SetActive(false);
+    }
+
+
+
+
+    public void OnClickGameQuit()
+    {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 
 
