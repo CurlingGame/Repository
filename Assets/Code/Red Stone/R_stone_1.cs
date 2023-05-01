@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class R_stone_1 : MonoBehaviour
 {
@@ -11,11 +12,30 @@ public class R_stone_1 : MonoBehaviour
     public GameObject Rbroom;           // 브룸
     public GameObject FrontCam;         // A 지점에서의 카메라 - 스톤의 뒤쪽
     public GameObject UpCam;            // B C 지점에서의 카메라 - 스톤의 위쪽
+    public GameObject ForwardButtonR1;
 
     Mainscript mainscript;              // Mainscript 의 변수를 사용하기 위함
 
+    bool m_click;
+
+
+
+
+    public void ClickUp()
+    {
+        m_click = false;
+        play = false;
+        ForwardButtonR1.SetActive(false);
+    }
+
+    public void ClickDown()
+    {
+        m_click = true;
+    }
+
     void Ready()
     {
+        ForwardButtonR1.SetActive(true);
         Debug.Log("set");
         FrontCam.SetActive(true);
         UpCam.SetActive(false);                                     // 작동하는 카메라 지정
@@ -45,25 +65,23 @@ public class R_stone_1 : MonoBehaviour
 
     }
 
+
     void Throw()
     {
         if (setting) { Ready(); }
 
-        // 스톤의 현제 위치 찾기
+        // 스톤의 현재 위치 찾기
         Rigidbody rb = GetComponent<Rigidbody>();
         Vector3 pos;
         pos = transform.position;
 
         // A 지점
-        if (play && (pos.x < -11 && Input.GetMouseButton(2)))
+        if (play && (pos.x < -11 && m_click))
         {
             rb.AddForce(Vector3.right * 7f);
             FrontCam.transform.position = new Vector3(-1.5f + pos.x, 2f, 0f);
         }
-        if (Input.GetMouseButtonUp(2))
-        {
-            play = false;
-        }
+
 
         // B 지점
         if ((pos.x > -11) && (pos.x <= 13))
@@ -121,7 +139,7 @@ public class R_stone_1 : MonoBehaviour
             if ((pos.z > 2.3f) || (pos.z < -2.3f)) {
                 Debug.Log("end5 bad control");
                 failstone();
-                mainscript.turn = "Blue";               // 향후 추가할지 고민중인 코든
+                mainscript.turn = "Blue";               // 향후 추가할지 고민중인 코드
             } */
         }
     }
