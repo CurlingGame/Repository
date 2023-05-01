@@ -12,7 +12,14 @@ public class R_stone_1 : MonoBehaviour
     public GameObject FrontCam;         // A 지점에서의 카메라 - 스톤의 뒤쪽
     public GameObject UpCam;            // B C 지점에서의 카메라 - 스톤의 위쪽
 
+    public GameObject Startbtn;
+    public GameObject Lbroombtn;
+    public GameObject Rbroombtn;
+    
     Mainscript mainscript;              // Mainscript 의 변수를 사용하기 위함
+    Throwbtn throwbtn;
+    UPbutton upbtn;
+    Downbutton downbtn;
 
     void Ready()
     {
@@ -26,6 +33,9 @@ public class R_stone_1 : MonoBehaviour
         Lbroom.transform.position = new Vector3(-10f, 0.8f, 1f);
 
         mainscript = GameObject.Find("Sheet").GetComponent<Mainscript>(); // Mainscript 의 변수를 사용하기 위함
+        throwbtn = FindObjectOfType<Throwbtn>();
+        upbtn = FindObjectOfType<UPbutton>();
+        downbtn = FindObjectOfType<Downbutton>();
 
         setting = false;
     }
@@ -55,7 +65,7 @@ public class R_stone_1 : MonoBehaviour
         pos = transform.position;
 
         // A 지점
-        if (play && (pos.x < -11 && Input.GetMouseButton(2)))
+        if (play && (pos.x < -11 && throwbtn.isBtnDown))
         {
             rb.AddForce(Vector3.right * 7f);
             FrontCam.transform.position = new Vector3(-1.5f + pos.x, 2f, 0f);
@@ -70,16 +80,17 @@ public class R_stone_1 : MonoBehaviour
         {
             FrontCam.SetActive(false);
             UpCam.SetActive(true);
+
             Rbroom.transform.position = new Vector3(1f + pos.x, 0.8f, -1f);
             Lbroom.transform.position = new Vector3(1f + pos.x, 0.8f, 1f);
 
-            if (Input.GetMouseButton(0))
+            if (upbtn.isBtnDown)
             {
                 Lbroom.transform.position = new Vector3(1f + pos.x, 0.8f, 1.3f);
                 rb.AddForce(Vector3.forward * 3);
             }
 
-            if (Input.GetMouseButton(1))
+            if (downbtn.isBtnDown)
             {
                 Rbroom.transform.position = new Vector3(1f + pos.x, 0.8f, -1.3f);
                 rb.AddForce(Vector3.back * 3);
@@ -113,16 +124,6 @@ public class R_stone_1 : MonoBehaviour
                 Debug.Log("end3 week shot");
                 Throwend();
             }
-            /*if (pos.x > 19){
-                Debug.Log("end4 strong shot");
-                failstone();
-                mainscript.turn = "Blue";
-            }
-            if ((pos.z > 2.3f) || (pos.z < -2.3f)) {
-                Debug.Log("end5 bad control");
-                failstone();
-                mainscript.turn = "Blue";               // 향후 추가할지 고민중인 코든
-            } */
         }
     }
 }

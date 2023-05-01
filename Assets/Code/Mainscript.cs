@@ -29,7 +29,6 @@ public class Mainscript : MonoBehaviour
     public static int rscore;
     public static int bscore;
 
-
     void Start()
     {
          Red[1] = Rstone_1; Red[2] = Rstone_2;
