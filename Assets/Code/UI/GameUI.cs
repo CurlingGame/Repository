@@ -17,6 +17,9 @@ public class GameUI : MonoBehaviour
 
 
 
+
+
+
     public void OnClickHouseCam()
     {   
         FrontCam.SetActive(false);

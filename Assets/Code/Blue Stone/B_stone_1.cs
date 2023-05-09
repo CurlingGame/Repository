@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-
 
 public class B_stone_1 : MonoBehaviour
 {
@@ -14,29 +12,10 @@ public class B_stone_1 : MonoBehaviour
     public GameObject FrontCam;         // A 지점에서의 카메라 - 스톤의 뒤쪽
     public GameObject UpCam;            // B C 지점에서의 카메라 - 스톤의 위쪽
 
-
     Mainscript mainscript;              // Mainscript 의 변수를 사용하기 위함
-    public GameObject ForwardButtonB1;
-    bool m_click;
-
-
-
-
-    public void ClickUp()
-    {
-        m_click = false;
-        play = false;
-        ForwardButtonB1.SetActive(false);
-    }
-
-    public void ClickDown()
-    {
-        m_click = true;
-    }
 
     void Ready()
     {
-        ForwardButtonB1.SetActive(true);
         FrontCam.SetActive(true);
         UpCam.SetActive(false);                                     // 작동하는 카메라 지정
         transform.position = new Vector3(-19f, 0.6f, 0f);           // 스톤의 위치 초기화
@@ -69,19 +48,22 @@ public class B_stone_1 : MonoBehaviour
     void Throw()
     {
         if (setting) { Ready(); }
-        
+
         // 스톤의 현제 위치 찾기
         Rigidbody rb = GetComponent<Rigidbody>();
         Vector3 pos;
         pos = transform.position;
 
         // A 지점
-        if (play && (pos.x < -11 && m_click))
+        if (play && (pos.x < -11 && Input.GetMouseButton(2)))
         {
             rb.AddForce(Vector3.right * 7f);
             FrontCam.transform.position = new Vector3(-1.5f + pos.x, 2f, 0f);
         }
-
+        if (Input.GetMouseButtonUp(2))
+        {
+            play = false;
+        }
 
         // B 지점
         if ((pos.x > -11) && (pos.x <= 13))
