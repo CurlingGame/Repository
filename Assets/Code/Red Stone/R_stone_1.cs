@@ -17,9 +17,6 @@ public class R_stone_1 : MonoBehaviour
     public GameObject Rbroombtn;
     
     Mainscript mainscript;              // Mainscript 의 변수를 사용하기 위함
-    Throwbtn throwbtn;
-    UPbutton upbtn;
-    Downbutton downbtn;
 
     void Ready()
     {
@@ -33,9 +30,6 @@ public class R_stone_1 : MonoBehaviour
         Lbroom.transform.position = new Vector3(-10f, 0.8f, 1f);
 
         mainscript = GameObject.Find("Sheet").GetComponent<Mainscript>(); // Mainscript 의 변수를 사용하기 위함
-        throwbtn = FindObjectOfType<Throwbtn>();
-        upbtn = FindObjectOfType<UPbutton>();
-        downbtn = FindObjectOfType<Downbutton>();
 
         setting = false;
     }
@@ -65,9 +59,9 @@ public class R_stone_1 : MonoBehaviour
         pos = transform.position;
 
         // A 지점
-        if (play && (pos.x < -11 && throwbtn.isBtnDown))
+        if (play && (pos.x < -11 && mainscript.inputstart))
         {
-            rb.AddForce(Vector3.right * 7f);
+            rb.AddForce(Vector3.right * 70f);
             FrontCam.transform.position = new Vector3(-1.5f + pos.x, 2f, 0f);
         }
         if (Input.GetMouseButtonUp(2))
@@ -84,13 +78,13 @@ public class R_stone_1 : MonoBehaviour
             Rbroom.transform.position = new Vector3(1f + pos.x, 0.8f, -1f);
             Lbroom.transform.position = new Vector3(1f + pos.x, 0.8f, 1f);
 
-            if (upbtn.isBtnDown)
+            if (mainscript.inputup)
             {
                 Lbroom.transform.position = new Vector3(1f + pos.x, 0.8f, 1.3f);
                 rb.AddForce(Vector3.forward * 3);
             }
 
-            if (downbtn.isBtnDown)
+            if (mainscript.inputdown)
             {
                 Rbroom.transform.position = new Vector3(1f + pos.x, 0.8f, -1.3f);
                 rb.AddForce(Vector3.back * 3);

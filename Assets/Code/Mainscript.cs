@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Mainscript : MonoBehaviour
 {
@@ -28,6 +30,50 @@ public class Mainscript : MonoBehaviour
 
     public static int rscore;
     public static int bscore;
+
+    public bool inputstart = false;
+    public bool inputup = false;
+    public bool inputdown = false;
+
+    public void startclick()
+    {
+        if (inputstart) {
+            inputstart = false;
+            Debug.Log(inputstart);
+        }
+        else {
+            inputstart = true;
+            Debug.Log(inputstart);
+        }
+    }
+
+    public void upclick()
+    {
+        if (inputup)
+        {
+            inputup = false;
+            Debug.Log(inputup);
+        }
+        else
+        {
+            inputup = true;
+            Debug.Log(inputup);
+        }
+    }
+
+    public void downclick()
+    {
+        if (inputdown)
+        {
+            inputdown = false;
+            Debug.Log(inputdown);
+        }
+        else
+        {
+            inputdown = true;
+            Debug.Log(inputdown);
+        }
+    }
 
     void Start()
     {
