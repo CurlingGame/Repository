@@ -2442,6 +2442,9 @@ MonoBehaviour:
   Rbroom: {fileID: 667623982}
   FrontCam: {fileID: 963194225}
   UpCam: {fileID: 1886080079}
+  Startbtn: {fileID: 376671993}
+  Lbroombtn: {fileID: 418681193}
+  Rbroombtn: {fileID: 1440587920}
 --- !u!1 &330579001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,6 +2750,9 @@ MonoBehaviour:
   Rbroom: {fileID: 667623982}
   FrontCam: {fileID: 963194225}
   UpCam: {fileID: 1886080079}
+  Startbtn: {fileID: 376671993}
+  Lbroombtn: {fileID: 418681193}
+  Rbroombtn: {fileID: 1440587920}
 --- !u!64 &357202618
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4987,6 +4993,9 @@ MonoBehaviour:
   Rbroom: {fileID: 667623982}
   FrontCam: {fileID: 963194225}
   UpCam: {fileID: 1886080079}
+  Startbtn: {fileID: 376671993}
+  Lbroombtn: {fileID: 418681193}
+  Rbroombtn: {fileID: 1440587920}
 --- !u!1 &652560494
 GameObject:
   m_ObjectHideFlags: 0
@@ -5129,6 +5138,9 @@ MonoBehaviour:
   Rturn: 1
   Bturn: 1
   turncolor: Red
+  Time: 1
+  Timechk: 0
+  play: 1
   inputstart: 0
   inputup: 0
   inputdown: 0
@@ -7588,6 +7600,9 @@ MonoBehaviour:
   Rbroom: {fileID: 667623982}
   FrontCam: {fileID: 963194225}
   UpCam: {fileID: 1886080079}
+  Startbtn: {fileID: 376671993}
+  Lbroombtn: {fileID: 418681193}
+  Rbroombtn: {fileID: 1440587920}
 --- !u!1 &1105201130
 GameObject:
   m_ObjectHideFlags: 0
@@ -7966,6 +7981,9 @@ MonoBehaviour:
   Rbroom: {fileID: 667623982}
   FrontCam: {fileID: 963194225}
   UpCam: {fileID: 1886080079}
+  Startbtn: {fileID: 376671993}
+  Lbroombtn: {fileID: 418681193}
+  Rbroombtn: {fileID: 1440587920}
 --- !u!1 &1178897524
 GameObject:
   m_ObjectHideFlags: 0
@@ -10577,6 +10595,9 @@ MonoBehaviour:
   Rbroom: {fileID: 667623982}
   FrontCam: {fileID: 963194225}
   UpCam: {fileID: 1886080079}
+  Startbtn: {fileID: 376671993}
+  Lbroombtn: {fileID: 418681193}
+  Rbroombtn: {fileID: 1440587920}
 --- !u!1 &1639316391
 GameObject:
   m_ObjectHideFlags: 0
@@ -10713,6 +10734,9 @@ MonoBehaviour:
   Rbroom: {fileID: 667623982}
   FrontCam: {fileID: 963194225}
   UpCam: {fileID: 1886080079}
+  Startbtn: {fileID: 376671993}
+  Lbroombtn: {fileID: 418681193}
+  Rbroombtn: {fileID: 1440587920}
 --- !u!1001 &1686709944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10997,6 +11021,9 @@ MonoBehaviour:
   Rbroom: {fileID: 667623982}
   FrontCam: {fileID: 963194225}
   UpCam: {fileID: 1886080079}
+  Startbtn: {fileID: 376671993}
+  Lbroombtn: {fileID: 418681193}
+  Rbroombtn: {fileID: 1440587920}
 --- !u!1 &1727990539
 GameObject:
   m_ObjectHideFlags: 0
@@ -11365,6 +11392,9 @@ MonoBehaviour:
   Rbroom: {fileID: 667623982}
   FrontCam: {fileID: 963194225}
   UpCam: {fileID: 1886080079}
+  Startbtn: {fileID: 376671993}
+  Lbroombtn: {fileID: 418681193}
+  Rbroombtn: {fileID: 1440587920}
 --- !u!1 &1791945834
 GameObject:
   m_ObjectHideFlags: 0
@@ -11667,6 +11697,9 @@ MonoBehaviour:
   Rbroom: {fileID: 667623982}
   FrontCam: {fileID: 963194225}
   UpCam: {fileID: 1886080079}
+  Startbtn: {fileID: 376671993}
+  Lbroombtn: {fileID: 418681193}
+  Rbroombtn: {fileID: 1440587920}
 --- !u!1 &1826850467
 GameObject:
   m_ObjectHideFlags: 0
@@ -12650,6 +12683,9 @@ MonoBehaviour:
   Rbroom: {fileID: 667623982}
   FrontCam: {fileID: 963194225}
   UpCam: {fileID: 1886080079}
+  Startbtn: {fileID: 376671993}
+  Lbroombtn: {fileID: 418681193}
+  Rbroombtn: {fileID: 1440587920}
 --- !u!1 &1955210240
 GameObject:
   m_ObjectHideFlags: 0
