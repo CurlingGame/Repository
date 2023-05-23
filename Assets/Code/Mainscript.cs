@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Mainscript : MonoBehaviour
 {
@@ -25,10 +27,55 @@ public class Mainscript : MonoBehaviour
     public int Rturn = 1;
     public int Bturn = 1;
     public string turncolor = "Red";
+    public int Time = 1;
+    public bool Timechk = false;
+    public bool play = true;
 
     public static int rscore;
     public static int bscore;
 
+    public bool inputstart = false;
+    public bool inputup = false;
+    public bool inputdown = false;
+
+    public void startclick()
+    {
+        if (inputstart) {
+            inputstart = false;
+            play= false;
+        }
+        else {
+            inputstart = true;
+            Timechk = true;
+            Debug.Log("START BTN 터치");
+        }
+    }
+
+    public void upclick()
+    {
+        if (inputup)
+        {
+            inputup = false;
+        }
+        else
+        {
+            inputup = true;
+            Debug.Log("UP BTN 터치");
+        }
+    }
+
+    public void downclick()
+    {
+        if (inputdown)
+        {
+            inputdown = false;
+        }
+        else
+        {
+            inputdown = true;
+            Debug.Log("Down BTN 터치");
+        }
+    }
 
     void Start()
     {
@@ -46,10 +93,14 @@ public class Mainscript : MonoBehaviour
     void Update()
     {
         if ((turncolor == "Red")&&(Rturn < 7)){
-            Red[Rturn].SendMessage("Throw");
+            Red[Rturn].SendMessage("GetReady");
+            Red[Rturn].SendMessage("ObjMove");
+            Red[Rturn].SendMessage("ShotEnd");
         }
-        else if((turncolor == "Blue")&& (Bturn < 7)){
-            Blue[Bturn].SendMessage("Throw");
+        else if((turncolor == "Blue")&&(Bturn < 7)){
+            Blue[Bturn].SendMessage("GetReady");
+            Blue[Bturn].SendMessage("ObjMove");
+            Blue[Bturn].SendMessage("ShotEnd");
         }
 
         else {
@@ -60,6 +111,20 @@ public class Mainscript : MonoBehaviour
             set();
         }
     }
+
+    void FixedUpdate() // 0.02초에 한번씩 작동 == 1초에 50번 작동한다
+    {
+        if ((turncolor == "Red") && (Rturn < 7)) {
+            Red[Rturn].SendMessage("GetReady");
+            Red[Rturn].SendMessage("Throw");
+        }
+        if ((turncolor == "Blue") && (Bturn < 7)) {
+            Blue[Bturn].SendMessage("GetReady");
+            Blue[Bturn].SendMessage("Throw");
+        }
+        if (Timechk) { Time++; }
+    }
+
 
     void calc()
     {
