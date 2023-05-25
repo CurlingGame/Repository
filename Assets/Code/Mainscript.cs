@@ -42,21 +42,24 @@ public class Mainscript : MonoBehaviour
     public Text rscoreLabel4;
     public Text totalrscoreLabel;
 
-
+    public RectTransform uiRectTransform;
+    public Vector2 newPosition;
     public bool inputstart = false;
     public bool inputup = false;
     public bool inputdown = false;
-
     
     public void startclick()
     {
         if (inputstart) {
             inputstart = false;
             play= false;
+            newPosition = new Vector2(0f, -700f);
+            uiRectTransform.anchoredPosition = newPosition;
         }
         else {
             inputstart = true;
             Timechk = true;
+            GetComponent<AudioSource>().Play();
             Debug.Log("START BTN ÅÍÄ¡");
         }
     }
@@ -212,12 +215,12 @@ public class Mainscript : MonoBehaviour
         Rturn = 1;
         Bturn = 1;
         for (int i = 1; i < Red.Length; i++) {
-            Red[i].transform.position = new Vector3((-17.3f + (0.3f * i)), 0.6f, 2f);
+            Red[i].transform.position = new Vector3((-17.3f + (0.35f * i)), 0.6f, 2f);
         }
 
         for (int i = 1; i < Blue.Length; i++)
         {
-            Blue[i].transform.position = new Vector3((-17.3f + (0.3f * i)), 0.6f, -2f);
+            Blue[i].transform.position = new Vector3((-17.3f + (0.35f * i)), 0.6f, -2f);
         }
         
     }

@@ -13,7 +13,10 @@ public class R_stone_1 : MonoBehaviour
     public GameObject Startbtn;
     public GameObject Lbroombtn;
     public GameObject Rbroombtn;
-    
+
+    public RectTransform uiRectTransform;
+    public Vector2 newPosition;
+
     Mainscript mainscript;              // Mainscript 의 변수를 사용하기 위함
 
     void Ready()
@@ -125,6 +128,12 @@ public class R_stone_1 : MonoBehaviour
         }
     }
 
+    public void startbtnmove()
+    {
+        newPosition = new Vector2(0f, -400f);
+        uiRectTransform.anchoredPosition = newPosition;
+    }
+
     void failstone()
     {
         transform.position = new Vector3(-22f, 0.6f, 2f);
@@ -138,5 +147,6 @@ public class R_stone_1 : MonoBehaviour
         mainscript.Time = 0;
         mainscript.turncolor = "Blue";
         mainscript.Rturn++;
+        startbtnmove();
     }
 }
