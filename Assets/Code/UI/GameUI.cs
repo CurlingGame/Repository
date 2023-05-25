@@ -14,6 +14,7 @@ public class GameUI : MonoBehaviour
     public GameObject InGameUI;
     public GameObject AudioSetting;
     public GameObject GameSetting;
+    public GameObject Scoreboard;
 
 
 
@@ -40,10 +41,16 @@ public class GameUI : MonoBehaviour
         
     }
 
-    public void OnClickStart()
-    {   //스타트 버튼을 누르기 전에는 마우스 휠이 작동되지 않아야함.
-        InGameUI.SetActive(false);
+    public void OnClickScoreboard()
+    {   
+        Scoreboard.SetActive(true);
     }
+
+    public void OnClickExitScoreboard()
+    {
+        Scoreboard.SetActive(false);
+    }
+
 
 
 

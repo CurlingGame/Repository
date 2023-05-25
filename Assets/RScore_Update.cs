@@ -3,18 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RScore_Update : MonoBehaviour { 
+public class RScore_Update : MonoBehaviour {
 
-    Text rscoreLabel;
-    
+    public Text rscoreLabel1;
+    public Text rscoreLabel2;
+    public Text rscoreLabel3;
+    public Text rscoreLabel4;
+    public Text totalrscoreLabel;
 
-    void Awake ()
+
+
+
+    void Update()
     {
-        rscoreLabel = GetComponent<Text>();
-    }
+        if (totalrscoreLabel != null)
+        {
+            totalrscoreLabel.text = Mainscript.totalrscore.ToString();
+        }
+        if (rscoreLabel1 != null)
+        {
+            rscoreLabel1.text = Mainscript.rscore[0].ToString();
+        }
+        if (rscoreLabel2 != null)
+        {
+            rscoreLabel2.text = Mainscript.rscore[1].ToString();
+        }
+        if (rscoreLabel3 != null)
+        {
+            rscoreLabel3.text = Mainscript.rscore[2].ToString();
+        }
+        if (rscoreLabel4 != null)
+        {
+            rscoreLabel4.text = Mainscript.rscore[3].ToString();
+        }
 
-    void Update ()
-    {
-        rscoreLabel.text = Mainscript.rscore.ToString();
     }
 }

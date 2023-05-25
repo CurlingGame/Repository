@@ -23,7 +23,7 @@ public class Mainscript : MonoBehaviour
     public GameObject Bstone_6;
 
     GameObject[] Blue = new GameObject[7];
-
+    public static int turn = 1;
     public int Rturn = 1;
     public int Bturn = 1;
     public string turncolor = "Red";
@@ -31,13 +31,23 @@ public class Mainscript : MonoBehaviour
     public bool Timechk = false;
     public bool play = true;
 
-    public static int rscore;
-    public static int bscore;
+    public static int[] rscore = { 0, 0, 0, 0 };
+    public static int[] bscore = { 0, 0, 0, 0 };
+    public static int totalrscore;
+    public static int totalbscore;
+
+    public Text rscoreLabel1;
+    public Text rscoreLabel2;
+    public Text rscoreLabel3;
+    public Text rscoreLabel4;
+    public Text totalrscoreLabel;
+
 
     public bool inputstart = false;
     public bool inputup = false;
     public bool inputdown = false;
 
+    
     public void startclick()
     {
         if (inputstart) {
@@ -106,10 +116,14 @@ public class Mainscript : MonoBehaviour
         else {
             Debug.Log("calc");
             calc();
-            Debug.Log("Red Score: " + rscore);
-            Debug.Log("Blue Score: " + bscore);
+
+
+            // Debug.Log("Red Score: " + rscore);
+            // Debug.Log("Blue Score: " + bscore);
+
             set();
         }
+        
     }
 
     void FixedUpdate() // 0.02초에 한번씩 작동 == 1초에 50번 작동한다
@@ -170,7 +184,8 @@ public class Mainscript : MonoBehaviour
                 Vector3 pos = RStoneTransform.position;
                 Nowpos = Mathf.Sqrt((Mathf.Pow((17.1f - pos.x), 2f) + Mathf.Pow((pos.z), 2f)));
                 if (Nowpos < 2f) {
-                    rscore += 1;
+                    rscore[turn - 1] += 1;
+                    totalrscore += 1;
                 }
 
             }
@@ -184,10 +199,12 @@ public class Mainscript : MonoBehaviour
                 Nowpos = Mathf.Sqrt((Mathf.Pow((17.1f - pos.x), 2f) + Mathf.Pow((pos.z), 2f)));
                 if (Nowpos < 2f)
                 {
-                    bscore += 1;
+                    bscore[turn - 1] += 1;
+                    totalbscore += 1;
                 }
             }
         }
+        turn += 1;
     }
 
     void set() 
@@ -202,5 +219,6 @@ public class Mainscript : MonoBehaviour
         {
             Blue[i].transform.position = new Vector3((-17.3f + (0.3f * i)), 0.6f, -2f);
         }
+        
     }
 }
