@@ -3763,6 +3763,8 @@ MonoBehaviour:
   RedTeamWin: {fileID: 1805084809}
   BlueTeamWin: {fileID: 237334632}
   RedBlueDraw: {fileID: 597425558}
+  startbtn: {fileID: 376671994}
+  newPosition: {x: 0, y: 0}
 --- !u!224 &396302632
 RectTransform:
   m_ObjectHideFlags: 0
