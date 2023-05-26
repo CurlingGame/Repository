@@ -2684,7 +2684,9 @@ MonoBehaviour:
   Startbtn: {fileID: 376671993}
   Lbroombtn: {fileID: 418681193}
   Rbroombtn: {fileID: 1440587920}
-  uiRectTransform: {fileID: 376671994}
+  startbtn: {fileID: 376671994}
+  upbtn: {fileID: 418681194}
+  downbtn: {fileID: 1440587921}
   newPosition: {x: 0, y: 0}
 --- !u!114 &328886705
 MonoBehaviour:
@@ -2970,7 +2972,9 @@ MonoBehaviour:
   Startbtn: {fileID: 376671993}
   Lbroombtn: {fileID: 418681193}
   Rbroombtn: {fileID: 1440587920}
-  uiRectTransform: {fileID: 376671994}
+  startbtn: {fileID: 376671994}
+  upbtn: {fileID: 418681194}
+  downbtn: {fileID: 1440587921}
   newPosition: {x: 0, y: 0}
 --- !u!64 &357202618
 MeshCollider:
@@ -4044,7 +4048,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -661, y: -377.00003}
+  m_AnchoredPosition: {x: -650, y: -700}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &418681195
@@ -5919,7 +5923,9 @@ MonoBehaviour:
   Startbtn: {fileID: 376671993}
   Lbroombtn: {fileID: 418681193}
   Rbroombtn: {fileID: 1440587920}
-  uiRectTransform: {fileID: 376671994}
+  startbtn: {fileID: 376671994}
+  upbtn: {fileID: 418681194}
+  downbtn: {fileID: 1440587921}
   newPosition: {x: 0, y: 0}
 --- !u!114 &645633562
 MonoBehaviour:
@@ -6158,6 +6164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a257eda1653272429933e3c78718679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Broom: {fileID: 667623982}
   Rstone_1: {fileID: 1003532377}
   Rstone_2: {fileID: 1632946302}
   Rstone_3: {fileID: 645633554}
@@ -6181,7 +6188,9 @@ MonoBehaviour:
   bscore: 00000000000000000000000000000000
   totalrscore: 0
   totalbscore: 0
-  uiRectTransform: {fileID: 376671994}
+  startbtn: {fileID: 376671994}
+  upbtn: {fileID: 418681194}
+  downbtn: {fileID: 1440587921}
   newPosition: {x: 0, y: 0}
   inputstart: 0
   inputup: 0
@@ -6672,6 +6681,8 @@ GameObject:
   - component: {fileID: 667623986}
   - component: {fileID: 667623985}
   - component: {fileID: 667623984}
+  - component: {fileID: 667623987}
+  - component: {fileID: 667623988}
   m_Layer: 0
   m_Name: Right Broom
   m_TagString: Untagged
@@ -6752,6 +6763,114 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!82 &667623987
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667623982}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -322972764200390766, guid: ccd73ed44fc85e24f803389464a4cd56, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 516cb4a10052cf5468bc94458bdebbd0, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &667623988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667623982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e082f6c5e58a643488f6a5a26c14a817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &670856532
 GameObject:
   m_ObjectHideFlags: 0
@@ -8820,7 +8939,9 @@ MonoBehaviour:
   Startbtn: {fileID: 376671993}
   Lbroombtn: {fileID: 418681193}
   Rbroombtn: {fileID: 1440587920}
-  uiRectTransform: {fileID: 376671994}
+  startbtn: {fileID: 376671994}
+  upbtn: {fileID: 418681194}
+  downbtn: {fileID: 1440587921}
   newPosition: {x: 0, y: 0}
 --- !u!114 &1003532385
 MonoBehaviour:
@@ -9714,7 +9835,9 @@ MonoBehaviour:
   Startbtn: {fileID: 376671993}
   Lbroombtn: {fileID: 418681193}
   Rbroombtn: {fileID: 1440587920}
-  uiRectTransform: {fileID: 376671994}
+  startbtn: {fileID: 376671994}
+  upbtn: {fileID: 418681194}
+  downbtn: {fileID: 1440587921}
   newPosition: {x: 0, y: 0}
 --- !u!114 &1094751243
 MonoBehaviour:
@@ -10288,7 +10411,9 @@ MonoBehaviour:
   Startbtn: {fileID: 376671993}
   Lbroombtn: {fileID: 418681193}
   Rbroombtn: {fileID: 1440587920}
-  uiRectTransform: {fileID: 376671994}
+  startbtn: {fileID: 376671994}
+  upbtn: {fileID: 418681194}
+  downbtn: {fileID: 1440587921}
   newPosition: {x: 0, y: 0}
 --- !u!114 &1161391513
 MonoBehaviour:
@@ -12318,7 +12443,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 661, y: -377.00003}
+  m_AnchoredPosition: {x: 650, y: -700}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1440587922
@@ -13688,7 +13813,9 @@ MonoBehaviour:
   Startbtn: {fileID: 376671993}
   Lbroombtn: {fileID: 418681193}
   Rbroombtn: {fileID: 1440587920}
-  uiRectTransform: {fileID: 376671994}
+  startbtn: {fileID: 376671994}
+  upbtn: {fileID: 418681194}
+  downbtn: {fileID: 1440587921}
   newPosition: {x: 0, y: 0}
 --- !u!114 &1632946310
 MonoBehaviour:
@@ -13940,7 +14067,9 @@ MonoBehaviour:
   Startbtn: {fileID: 376671993}
   Lbroombtn: {fileID: 418681193}
   Rbroombtn: {fileID: 1440587920}
-  uiRectTransform: {fileID: 376671994}
+  startbtn: {fileID: 376671994}
+  upbtn: {fileID: 418681194}
+  downbtn: {fileID: 1440587921}
   newPosition: {x: 0, y: 0}
 --- !u!114 &1639316399
 MonoBehaviour:
@@ -14518,7 +14647,9 @@ MonoBehaviour:
   Startbtn: {fileID: 376671993}
   Lbroombtn: {fileID: 418681193}
   Rbroombtn: {fileID: 1440587920}
-  uiRectTransform: {fileID: 376671994}
+  startbtn: {fileID: 376671994}
+  upbtn: {fileID: 418681194}
+  downbtn: {fileID: 1440587921}
   newPosition: {x: 0, y: 0}
 --- !u!114 &1720941540
 MonoBehaviour:
@@ -15002,7 +15133,9 @@ MonoBehaviour:
   Startbtn: {fileID: 376671993}
   Lbroombtn: {fileID: 418681193}
   Rbroombtn: {fileID: 1440587920}
-  uiRectTransform: {fileID: 376671994}
+  startbtn: {fileID: 376671994}
+  upbtn: {fileID: 418681194}
+  downbtn: {fileID: 1440587921}
   newPosition: {x: 0, y: 0}
 --- !u!114 &1774006102
 MonoBehaviour:
@@ -15503,7 +15636,9 @@ MonoBehaviour:
   Startbtn: {fileID: 376671993}
   Lbroombtn: {fileID: 418681193}
   Rbroombtn: {fileID: 1440587920}
-  uiRectTransform: {fileID: 376671994}
+  startbtn: {fileID: 376671994}
+  upbtn: {fileID: 418681194}
+  downbtn: {fileID: 1440587921}
   newPosition: {x: 0, y: 0}
 --- !u!114 &1806218354
 MonoBehaviour:
@@ -16798,7 +16933,9 @@ MonoBehaviour:
   Startbtn: {fileID: 376671993}
   Lbroombtn: {fileID: 418681193}
   Rbroombtn: {fileID: 1440587920}
-  uiRectTransform: {fileID: 376671994}
+  startbtn: {fileID: 376671994}
+  upbtn: {fileID: 418681194}
+  downbtn: {fileID: 1440587921}
   newPosition: {x: 0, y: 0}
 --- !u!114 &1951518279
 MonoBehaviour:

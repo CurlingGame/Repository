@@ -39,7 +39,9 @@ public class Mainscript : MonoBehaviour
     public int totalbscore;
 
 
-    public RectTransform uiRectTransform;
+    public RectTransform startbtn;
+    public RectTransform upbtn;
+    public RectTransform downbtn;
     public Vector2 newPosition;
     public bool inputstart = false;
     public bool inputup = false;
@@ -51,7 +53,11 @@ public class Mainscript : MonoBehaviour
             inputstart = false;
             play = false;
             newPosition = new Vector2(0f, -700f);
-            uiRectTransform.anchoredPosition = newPosition;
+            startbtn.anchoredPosition = newPosition;
+            newPosition = new Vector2(-650f, -350f);
+            upbtn.anchoredPosition = newPosition;
+            newPosition = new Vector2(650f, -350f);
+            downbtn.anchoredPosition = newPosition;
         }
         else {
             inputstart = true;

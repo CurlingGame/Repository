@@ -14,7 +14,9 @@ public class B_stone_1 : MonoBehaviour
     public GameObject Lbroombtn;
     public GameObject Rbroombtn;
 
-    public RectTransform uiRectTransform;
+    public RectTransform startbtn;
+    public RectTransform upbtn;
+    public RectTransform downbtn;
     public Vector2 newPosition;
 
     Mainscript mainscript;
@@ -73,6 +75,11 @@ public class B_stone_1 : MonoBehaviour
             {
                 Rbroom.transform.position = new Vector3(1f + pos.x, 0.8f, -1.3f);
             }
+        }
+
+        if (pos.x >= 13)
+        {
+            updownbtndown();
         }
     }
 
@@ -134,7 +141,14 @@ public class B_stone_1 : MonoBehaviour
     public void startbtnmove()
     {
         newPosition = new Vector2(0f, -400f);
-        uiRectTransform.anchoredPosition = newPosition;
+        startbtn.anchoredPosition = newPosition;
+    }
+
+    public void updownbtndown()
+    {
+        newPosition = new Vector2(0f, -700f);
+        upbtn.anchoredPosition = newPosition;
+        downbtn.anchoredPosition = newPosition;
     }
 
     void failstone()
@@ -151,5 +165,6 @@ public class B_stone_1 : MonoBehaviour
         mainscript.turncolor = "Red";
         mainscript.Bturn++;
         startbtnmove();
+        updownbtndown();
     }
 }
