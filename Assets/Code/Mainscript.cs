@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Mainscript : MonoBehaviour
 {
+    public GameObject Broom;
+
     public GameObject Rstone_1;
     public GameObject Rstone_2;
     public GameObject Rstone_3;
@@ -67,6 +69,7 @@ public class Mainscript : MonoBehaviour
         }
         else
         {
+            Broom.SendMessage("broomsound");
             inputup = true;
             Debug.Log("UP BTN 터치");
         }
@@ -80,6 +83,7 @@ public class Mainscript : MonoBehaviour
         }
         else
         {
+            Broom.SendMessage("broomsound");
             inputdown = true;
             Debug.Log("Down BTN 터치");
         }
