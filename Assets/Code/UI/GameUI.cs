@@ -22,8 +22,11 @@ public class GameUI : MonoBehaviour
     public GameObject BlueTeamWin;
     public GameObject RedBlueDraw;
 
+    public RectTransform startbtn;
+    public Vector2 newPosition;
 
-    
+
+
 
     public void RedWin()
     {
@@ -51,9 +54,9 @@ public class GameUI : MonoBehaviour
         HouseCam.SetActive(true);
         HouseCamButton.SetActive(false);
         FrontCamButton.SetActive(true);
-        
 
-
+        newPosition = new Vector2(0f, -700f);
+        startbtn.anchoredPosition = newPosition;
     }
 
     public void OnClickFrontCam()
@@ -62,7 +65,10 @@ public class GameUI : MonoBehaviour
         HouseCam.SetActive(false);
         HouseCamButton.SetActive(true);
         FrontCamButton.SetActive(false);
-        
+
+        newPosition = new Vector2(0f, -400f);
+        startbtn.anchoredPosition = newPosition;
+
     }
 
     public void OnClickScoreboard()
