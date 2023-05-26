@@ -23,7 +23,7 @@ public class Mainscript : MonoBehaviour
     public GameObject Bstone_6;
 
     GameObject[] Blue = new GameObject[7];
-    public static int turn = 1;
+    public int turn = 1;
     public int Rturn = 1;
     public int Bturn = 1;
     public string turncolor = "Red";
@@ -31,28 +31,23 @@ public class Mainscript : MonoBehaviour
     public bool Timechk = false;
     public bool play = true;
 
-    public static int[] rscore = { 0, 0, 0, 0 };
-    public static int[] bscore = { 0, 0, 0, 0 };
-    public static int totalrscore;
-    public static int totalbscore;
+    public int[] rscore = { 0, 0, 0, 0 };
+    public int[] bscore = { 0, 0, 0, 0 };
+    public int totalrscore;
+    public int totalbscore;
 
-    public Text rscoreLabel1;
-    public Text rscoreLabel2;
-    public Text rscoreLabel3;
-    public Text rscoreLabel4;
-    public Text totalrscoreLabel;
 
     public RectTransform uiRectTransform;
     public Vector2 newPosition;
     public bool inputstart = false;
     public bool inputup = false;
     public bool inputdown = false;
-    
+
     public void startclick()
     {
         if (inputstart) {
             inputstart = false;
-            play= false;
+            play = false;
             newPosition = new Vector2(0f, -700f);
             uiRectTransform.anchoredPosition = newPosition;
         }
@@ -92,25 +87,25 @@ public class Mainscript : MonoBehaviour
 
     void Start()
     {
-         Red[1] = Rstone_1; Red[2] = Rstone_2;
-         Red[3] = Rstone_3; Red[4] = Rstone_4;
-         Red[5] = Rstone_5; Red[6] = Rstone_6;
+        Red[1] = Rstone_1; Red[2] = Rstone_2;
+        Red[3] = Rstone_3; Red[4] = Rstone_4;
+        Red[5] = Rstone_5; Red[6] = Rstone_6;
 
-         Blue[1] = Bstone_1; Blue[2] = Bstone_2;
-         Blue[3] = Bstone_3; Blue[4] = Bstone_4;
-         Blue[5] = Bstone_5; Blue[6] = Bstone_6;
+        Blue[1] = Bstone_1; Blue[2] = Bstone_2;
+        Blue[3] = Bstone_3; Blue[4] = Bstone_4;
+        Blue[5] = Bstone_5; Blue[6] = Bstone_6;
 
         Debug.Log("start");
     }
 
     void Update()
     {
-        if ((turncolor == "Red")&&(Rturn < 7)){
+        if ((turncolor == "Red") && (Rturn < 7)) {
             Red[Rturn].SendMessage("GetReady");
             Red[Rturn].SendMessage("ObjMove");
             Red[Rturn].SendMessage("ShotEnd");
         }
-        else if((turncolor == "Blue")&&(Bturn < 7)){
+        else if ((turncolor == "Blue") && (Bturn < 7)) {
             Blue[Bturn].SendMessage("GetReady");
             Blue[Bturn].SendMessage("ObjMove");
             Blue[Bturn].SendMessage("ShotEnd");
@@ -126,7 +121,7 @@ public class Mainscript : MonoBehaviour
 
             set();
         }
-        
+
     }
 
     void FixedUpdate() // 0.02초에 한번씩 작동 == 1초에 50번 작동한다
@@ -175,8 +170,8 @@ public class Mainscript : MonoBehaviour
             }
         }
 
-        Debug.Log("Red: "+Rpos);
-        Debug.Log("Blue: "+Bpos);
+        Debug.Log("Red: " + Rpos);
+        Debug.Log("Blue: " + Bpos);
 
         if (Rpos < Bpos)
         {
@@ -196,7 +191,7 @@ public class Mainscript : MonoBehaviour
         else {
             Debug.Log("BlueWin");
             turncolor = "Blue";
-            for (int i = 1; i < Blue.Length; i++){
+            for (int i = 1; i < Blue.Length; i++) {
                 Transform BStoneTransform = Blue[i].transform;
                 Vector3 pos = BStoneTransform.position;
                 Nowpos = Mathf.Sqrt((Mathf.Pow((17.1f - pos.x), 2f) + Mathf.Pow((pos.z), 2f)));
@@ -208,20 +203,42 @@ public class Mainscript : MonoBehaviour
             }
         }
         turn += 1;
-    }
-
-    void set() 
-    {
-        Rturn = 1;
-        Bturn = 1;
-        for (int i = 1; i < Red.Length; i++) {
-            Red[i].transform.position = new Vector3((-17.3f + (0.35f * i)), 0.6f, 2f);
-        }
-
-        for (int i = 1; i < Blue.Length; i++)
+        if (turn == 5) // 4세트가 모두 끝났을 때
         {
-            Blue[i].transform.position = new Vector3((-17.3f + (0.35f * i)), 0.6f, -2f);
+            if (totalrscore > totalbscore)
+            {
+                Debug.Log("Redtotalwin");
+                GameObject.Find("UI Canvas").GetComponent<GameUI>().RedWin();
+
+            }
+            else if (totalrscore < totalbscore)
+            {
+                Debug.Log("BluetotalWin");
+                GameObject.Find("UI Canvas").GetComponent<GameUI>().BlueWin();
+            }
+            else
+            {
+                Debug.Log("draw");
+                GameObject.Find("UI Canvas").GetComponent<GameUI>().Draw();
+            }
         }
-        
     }
+
+
+
+void set()
+{
+    Rturn = 1;
+    Bturn = 1;
+    for (int i = 1; i < Red.Length; i++)
+    {
+        Red[i].transform.position = new Vector3((-17.3f + (0.35f * i)), 0.6f, 2f);
+    }
+
+    for (int i = 1; i < Blue.Length; i++)
+    {
+        Blue[i].transform.position = new Vector3((-17.3f + (0.35f * i)), 0.6f, -2f);
+    }
+}
+
 }

@@ -16,9 +16,29 @@ public class GameUI : MonoBehaviour
     public GameObject GameSetting;
     public GameObject Scoreboard;
 
+    public GameObject RedTeamWin;
+    public GameObject BlueTeamWin;
+    public GameObject RedBlueDraw;
+    
 
+    public void RedWin()
+    {
+        RedTeamWin.SetActive(true);
+    }
+    public void BlueWin()
+    {
+        BlueTeamWin.SetActive(true);
 
+    }
+    public void Draw()
+    {
+        RedBlueDraw.SetActive(true);
+    }
 
+    public void OnClickMenu()
+    {
+        SceneManager.LoadScene("Menu Scene");
+    }
 
 
     public void OnClickHouseCam()

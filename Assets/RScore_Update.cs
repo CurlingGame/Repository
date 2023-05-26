@@ -18,23 +18,23 @@ public class RScore_Update : MonoBehaviour {
     {
         if (totalrscoreLabel != null)
         {
-            totalrscoreLabel.text = Mainscript.totalrscore.ToString();
+            totalrscoreLabel.text = GameObject.Find("Sheet").GetComponent<Mainscript>().totalrscore.ToString();
         }
         if (rscoreLabel1 != null)
         {
-            rscoreLabel1.text = Mainscript.rscore[0].ToString();
+            rscoreLabel1.text = GameObject.Find("Sheet").GetComponent<Mainscript>().rscore[0].ToString();
         }
         if (rscoreLabel2 != null)
         {
-            rscoreLabel2.text = Mainscript.rscore[1].ToString();
+            rscoreLabel2.text = GameObject.Find("Sheet").GetComponent<Mainscript>().rscore[1].ToString();
         }
         if (rscoreLabel3 != null)
         {
-            rscoreLabel3.text = Mainscript.rscore[2].ToString();
+            rscoreLabel3.text = GameObject.Find("Sheet").GetComponent<Mainscript>().rscore[2].ToString();
         }
         if (rscoreLabel4 != null)
         {
-            rscoreLabel4.text = Mainscript.rscore[3].ToString();
+            rscoreLabel4.text = GameObject.Find("Sheet").GetComponent<Mainscript>().rscore[3].ToString();
         }
 
     }
