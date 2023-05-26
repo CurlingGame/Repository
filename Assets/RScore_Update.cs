@@ -11,7 +11,7 @@ public class RScore_Update : MonoBehaviour {
     public Text rscoreLabel4;
     public Text totalrscoreLabel;
 
-
+    
 
 
     void Update()

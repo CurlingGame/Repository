@@ -202,9 +202,10 @@ public class Mainscript : MonoBehaviour
                 }
             }
         }
+
         turn += 1;
         if (turn == 5) // 4세트가 모두 끝났을 때
-        {
+        {   
             if (totalrscore > totalbscore)
             {
                 Debug.Log("Redtotalwin");

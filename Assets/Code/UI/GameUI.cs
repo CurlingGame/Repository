@@ -15,10 +15,14 @@ public class GameUI : MonoBehaviour
     public GameObject AudioSetting;
     public GameObject GameSetting;
     public GameObject Scoreboard;
+    public GameObject ScoreboardButton;
+    public GameObject ScoreboardExitButton;
 
     public GameObject RedTeamWin;
     public GameObject BlueTeamWin;
     public GameObject RedBlueDraw;
+
+
     
 
     public void RedWin()
@@ -64,11 +68,15 @@ public class GameUI : MonoBehaviour
     public void OnClickScoreboard()
     {   
         Scoreboard.SetActive(true);
+        ScoreboardButton.SetActive(false);
+        ScoreboardExitButton.SetActive(true);
     }
 
     public void OnClickExitScoreboard()
     {
         Scoreboard.SetActive(false);
+        ScoreboardExitButton.SetActive(false);
+        ScoreboardButton.SetActive(true);
     }
 
 
