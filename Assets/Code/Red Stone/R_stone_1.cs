@@ -137,7 +137,7 @@ public class R_stone_1 : MonoBehaviour
 
     public void startbtnmove()
     {
-        newPosition = new Vector2(0f, -400f);
+        newPosition = new Vector2(0f, -370f);
         startbtn.anchoredPosition = newPosition;
     }
 

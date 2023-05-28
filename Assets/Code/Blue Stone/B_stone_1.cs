@@ -140,7 +140,7 @@ public class B_stone_1 : MonoBehaviour
 
     public void startbtnmove()
     {
-        newPosition = new Vector2(0f, -400f);
+        newPosition = new Vector2(0f, -370f);
         startbtn.anchoredPosition = newPosition;
     }
 
@@ -153,7 +153,7 @@ public class B_stone_1 : MonoBehaviour
 
     void failstone()
     {
-        transform.position = new Vector3(-22f, 0.6f, 2f);
+        transform.position = new Vector3(-22f, 0.6f, -2f);
     }
 
     void Throwend()
