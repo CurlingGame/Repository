@@ -11,6 +11,7 @@ public class GameUI : MonoBehaviour
     public GameObject FrontCam;
     public GameObject HouseCamButton;
     public GameObject FrontCamButton;
+
     public GameObject InGameUI;
     public GameObject AudioSetting;
     public GameObject GameSetting;
@@ -25,8 +26,7 @@ public class GameUI : MonoBehaviour
     public RectTransform startbtn;
     public Vector2 newPosition;
 
-
-
+    Mainscript mainscript;
 
     public void RedWin()
     {
@@ -61,14 +61,17 @@ public class GameUI : MonoBehaviour
 
     public void OnClickFrontCam()
     {
+        mainscript = GameObject.Find("Sheet").GetComponent<Mainscript>();
         FrontCam.SetActive(true);
         HouseCam.SetActive(false);
         HouseCamButton.SetActive(true);
         FrontCamButton.SetActive(false);
 
-        newPosition = new Vector2(0f, -400f);
-        startbtn.anchoredPosition = newPosition;
-
+        if (mainscript.play)
+        {
+            newPosition = new Vector2(0f, 100f);
+            startbtn.anchoredPosition = newPosition;
+        }
     }
 
     public void OnClickScoreboard()
@@ -76,13 +79,23 @@ public class GameUI : MonoBehaviour
         Scoreboard.SetActive(true);
         ScoreboardButton.SetActive(false);
         ScoreboardExitButton.SetActive(true);
+
+        newPosition = new Vector2(0f, -700f);
+        startbtn.anchoredPosition = newPosition;
     }
 
     public void OnClickExitScoreboard()
     {
+        mainscript = GameObject.Find("Sheet").GetComponent<Mainscript>();
         Scoreboard.SetActive(false);
         ScoreboardExitButton.SetActive(false);
         ScoreboardButton.SetActive(true);
+
+        if (mainscript.play)
+        {
+            newPosition = new Vector2(0f, 90f);
+            startbtn.anchoredPosition = newPosition;
+        }
     }
 
 

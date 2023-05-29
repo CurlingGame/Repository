@@ -54,9 +54,9 @@ public class Mainscript : MonoBehaviour
             play = false;
             newPosition = new Vector2(0f, -700f);
             startbtn.anchoredPosition = newPosition;
-            newPosition = new Vector2(-650f, -350f);
+            newPosition = new Vector2(-650f, -330f);
             upbtn.anchoredPosition = newPosition;
-            newPosition = new Vector2(650f, -350f);
+            newPosition = new Vector2(650f, -330f);
             downbtn.anchoredPosition = newPosition;
         }
         else {
@@ -186,7 +186,6 @@ public class Mainscript : MonoBehaviour
         if (Rpos < Bpos)
         {
             Debug.Log("RedWin");
-            turncolor = "Red";
             for (int i = 1; i < Red.Length; i++) {
                 Transform RStoneTransform = Red[i].transform;
                 Vector3 pos = RStoneTransform.position;
@@ -200,7 +199,6 @@ public class Mainscript : MonoBehaviour
         }
         else {
             Debug.Log("BlueWin");
-            turncolor = "Blue";
             for (int i = 1; i < Blue.Length; i++) {
                 Transform BStoneTransform = Blue[i].transform;
                 Vector3 pos = BStoneTransform.position;
@@ -212,6 +210,15 @@ public class Mainscript : MonoBehaviour
                 }
             }
         }
+
+        if (turncolor == "Red") 
+        {
+            turncolor = "Blue"; 
+        }
+        else {
+            turncolor = "Red"; 
+        }
+        
 
         turn += 1;
         if (turn == 5) // 4세트가 모두 끝났을 때
