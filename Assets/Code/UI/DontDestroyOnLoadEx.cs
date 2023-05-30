@@ -12,11 +12,11 @@ public class DontDestroyOnLoadEx : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject); // 게임 오브젝트가 파괴되지 않게 유지
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // 중복되는 게임 오브젝트가 있을경우 게임 오브젝트 파괴
         }
     }
 }

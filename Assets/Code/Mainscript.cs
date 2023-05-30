@@ -25,7 +25,7 @@ public class Mainscript : MonoBehaviour
     public GameObject Bstone_6;
 
     GameObject[] Blue = new GameObject[7];
-    public int turn = 1;
+    public int end = 1;
     public int Rturn = 1;
     public int Bturn = 1;
     public string turncolor = "Red";
@@ -37,6 +37,7 @@ public class Mainscript : MonoBehaviour
     public int[] bscore = { 0, 0, 0, 0 };
     public int totalrscore;
     public int totalbscore;
+    public Text EndText;
 
 
     public RectTransform startbtn;
@@ -191,7 +192,7 @@ public class Mainscript : MonoBehaviour
                 Vector3 pos = RStoneTransform.position;
                 Nowpos = Mathf.Sqrt((Mathf.Pow((17.1f - pos.x), 2f) + Mathf.Pow((pos.z), 2f)));
                 if (Nowpos < 2f) {
-                    rscore[turn - 1] += 1;
+                    rscore[end - 1] += 1;
                     totalrscore += 1;
                 }
 
@@ -205,7 +206,7 @@ public class Mainscript : MonoBehaviour
                 Nowpos = Mathf.Sqrt((Mathf.Pow((17.1f - pos.x), 2f) + Mathf.Pow((pos.z), 2f)));
                 if (Nowpos < 2f)
                 {
-                    bscore[turn - 1] += 1;
+                    bscore[end - 1] += 1;
                     totalbscore += 1;
                 }
             }
@@ -220,9 +221,15 @@ public class Mainscript : MonoBehaviour
         }
         
 
-        turn += 1;
-        if (turn == 5) // 4세트가 모두 끝났을 때
-        {   
+        end += 1;
+        if (end != 5)
+        {
+            EndText.text = end.ToString();
+        }
+        
+            
+        if (end == 5) // 4세트가 모두 끝났을 때
+        { 
             if (totalrscore > totalbscore)
             {
                 Debug.Log("Redtotalwin");
