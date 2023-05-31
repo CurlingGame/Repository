@@ -159,7 +159,7 @@ public class R_stone_1 : MonoBehaviour
     }
     public void Gazeon() 
     {
-        newPosition = new Vector2(770f, 0f);
+        newPosition = new Vector2(770f, 400f);
         Gazebar.anchoredPosition = newPosition;
     }
 
