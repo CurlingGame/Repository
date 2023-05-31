@@ -23,10 +23,22 @@ public class GameUI : MonoBehaviour
     public GameObject BlueTeamWin;
     public GameObject RedBlueDraw;
 
+    public RectTransform Gazebar;
     public RectTransform startbtn;
     public Vector2 newPosition;
 
     Mainscript mainscript;
+
+    public void Gazedown()
+    {
+        newPosition = new Vector2(2000f, 0f);
+        Gazebar.anchoredPosition = newPosition;
+    }
+    public void Gazeon()
+    {
+        newPosition = new Vector2(770f, 0f);
+        Gazebar.anchoredPosition = newPosition;
+    }
 
     public void RedWin()
     {
@@ -55,6 +67,7 @@ public class GameUI : MonoBehaviour
         HouseCamButton.SetActive(false);
         FrontCamButton.SetActive(true);
 
+        Gazedown();
         newPosition = new Vector2(0f, -700f);
         startbtn.anchoredPosition = newPosition;
     }
@@ -71,6 +84,7 @@ public class GameUI : MonoBehaviour
         {
             newPosition = new Vector2(0f, 100f);
             startbtn.anchoredPosition = newPosition;
+            Gazeon();
         }
     }
 
@@ -80,6 +94,7 @@ public class GameUI : MonoBehaviour
         ScoreboardButton.SetActive(false);
         ScoreboardExitButton.SetActive(true);
 
+        Gazedown();
         newPosition = new Vector2(0f, -700f);
         startbtn.anchoredPosition = newPosition;
     }
@@ -93,6 +108,7 @@ public class GameUI : MonoBehaviour
 
         if (mainscript.play)
         {
+            Gazeon();
             newPosition = new Vector2(0f, 90f);
             startbtn.anchoredPosition = newPosition;
         }

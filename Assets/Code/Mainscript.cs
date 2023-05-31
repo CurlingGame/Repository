@@ -43,6 +43,7 @@ public class Mainscript : MonoBehaviour
     public RectTransform startbtn;
     public RectTransform upbtn;
     public RectTransform downbtn;
+    public RectTransform Gaze;
     public Vector2 newPosition;
     public bool inputstart = false;
     public bool inputup = false;
@@ -55,9 +56,9 @@ public class Mainscript : MonoBehaviour
             play = false;
             newPosition = new Vector2(0f, -700f);
             startbtn.anchoredPosition = newPosition;
-            newPosition = new Vector2(-650f, -330f);
+            newPosition = new Vector2(300f, 150f);
             upbtn.anchoredPosition = newPosition;
-            newPosition = new Vector2(650f, -330f);
+            newPosition = new Vector2(-300f, 150f);
             downbtn.anchoredPosition = newPosition;
         }
         else {
@@ -125,11 +126,6 @@ public class Mainscript : MonoBehaviour
         else {
             Debug.Log("calc");
             calc();
-
-
-            // Debug.Log("Red Score: " + rscore);
-            // Debug.Log("Blue Score: " + bscore);
-
             set();
         }
 

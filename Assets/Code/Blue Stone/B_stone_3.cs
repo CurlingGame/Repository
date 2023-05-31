@@ -6,33 +6,35 @@ public class B_stone_3 : MonoBehaviour
 {
     bool set = false;
     public GameObject Lbroom;
-    public GameObject Rbroom;
-    public GameObject FrontCam;
-    public GameObject UpCam;
+    public GameObject Rbroom;           // 브룸
+    public GameObject FrontCam;         // A 지점에서의 카메라 - 스톤의 뒤쪽
+    public GameObject UpCam;            // B C 지점에서의 카메라 - 스톤의 위쪽
 
     public GameObject Startbtn;
     public GameObject Lbroombtn;
     public GameObject Rbroombtn;
 
+    public RectTransform Gaze;
+    public RectTransform Gazebar;
     public RectTransform startbtn;
     public RectTransform upbtn;
     public RectTransform downbtn;
     public Vector2 newPosition;
 
-    Mainscript mainscript;
+    Mainscript mainscript;              // Mainscript 의 변수를 사용하기 위함
 
     void Ready()
     {
         Debug.Log("set");
         FrontCam.SetActive(true);
-        UpCam.SetActive(false);
-        transform.position = new Vector3(-19f, 0.6f, 0f);
-        FrontCam.transform.position = new Vector3(-20.5f, 2f, 0f);
+        UpCam.SetActive(false);                                     // 작동하는 카메라 지정
+        transform.position = new Vector3(-19f, 0.6f, 0f);           // 스톤의 위치 초기화
+        FrontCam.transform.position = new Vector3(-20.5f, 2f, 0f);  // 카메라의 위치 초기화
         UpCam.transform.position = new Vector3(-10f, 5.5f, 0f);
-        Rbroom.transform.position = new Vector3(-10f, 0.8f, -1f);
+        Rbroom.transform.position = new Vector3(-10f, 0.8f, -1f);   // 브룸의 위치 초기화
         Lbroom.transform.position = new Vector3(-10f, 0.8f, 1f);
 
-        mainscript = GameObject.Find("Sheet").GetComponent<Mainscript>();
+        mainscript = GameObject.Find("Sheet").GetComponent<Mainscript>(); // Mainscript 의 변수를 사용하기 위함
     }
 
     void GetReady()
@@ -92,16 +94,22 @@ public class B_stone_3 : MonoBehaviour
 
     void Throw()
     {
+        // 스톤의 현제 위치 찾기
         Rigidbody rb = GetComponent<Rigidbody>();
         Vector3 pos = transform.position;
 
+        // A 지점
         if (pos.x < -11 && mainscript.inputstart && mainscript.play)
         {
             rb.AddForce(Vector3.right * 40f);
+            ChangeTopValue();
         }
 
+        // B 지점
         if ((pos.x > -11) && (pos.x <= 13))
         {
+            ReturnTopValue();
+            Gazedown();
             if (mainscript.inputup)
             {
                 rb.AddForce(Vector3.forward * 10);
@@ -139,6 +147,29 @@ public class B_stone_3 : MonoBehaviour
         }
     }
 
+    public void ChangeTopValue()
+    {
+        Vector2 offsetMax = Gaze.offsetMax;
+        offsetMax.y = (mainscript.Time * 3 - 500);
+        Gaze.offsetMax = offsetMax;
+    }
+    public void ReturnTopValue()
+    {
+        Vector2 offsetMax = Gaze.offsetMax;
+        offsetMax.y = -480;
+        Gaze.offsetMax = offsetMax;
+    }
+    public void Gazedown()
+    {
+        newPosition = new Vector2(2000f, 0f);
+        Gazebar.anchoredPosition = newPosition;
+    }
+    public void Gazeon()
+    {
+        newPosition = new Vector2(770f, 0f);
+        Gazebar.anchoredPosition = newPosition;
+    }
+
     public void startbtnmove()
     {
         newPosition = new Vector2(0f, 100f);
@@ -167,5 +198,7 @@ public class B_stone_3 : MonoBehaviour
         mainscript.Bturn++;
         startbtnmove();
         updownbtndown();
+        ReturnTopValue();
+        Gazeon();
     }
 }

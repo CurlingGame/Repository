@@ -14,6 +14,8 @@ public class R_stone_1 : MonoBehaviour
     public GameObject Lbroombtn;
     public GameObject Rbroombtn;
 
+    public RectTransform Gaze;
+    public RectTransform Gazebar;
     public RectTransform startbtn;
     public RectTransform upbtn;
     public RectTransform downbtn;
@@ -97,11 +99,14 @@ public class R_stone_1 : MonoBehaviour
         if (pos.x < -11 && mainscript.inputstart && mainscript.play)
         {
             rb.AddForce(Vector3.right * 40f);
+            ChangeTopValue();
         }
 
         // B ÁöÁ¡
         if ((pos.x > -11) && (pos.x <= 13))
         {
+            ReturnTopValue();
+            Gazedown();
             if (mainscript.inputup)
             {
                 rb.AddForce(Vector3.forward * 10);
@@ -135,6 +140,29 @@ public class R_stone_1 : MonoBehaviour
         }
     }
 
+    public void ChangeTopValue()
+    {
+        Vector2 offsetMax = Gaze.offsetMax;
+        offsetMax.y = (mainscript.Time * 3 - 500);
+        Gaze.offsetMax = offsetMax;
+    }
+    public void ReturnTopValue()
+    {
+        Vector2 offsetMax = Gaze.offsetMax;
+        offsetMax.y = -480;
+        Gaze.offsetMax = offsetMax;
+    }
+    public void Gazedown()
+    {
+        newPosition = new Vector2(2000f, 0f);
+        Gazebar.anchoredPosition = newPosition;
+    }
+    public void Gazeon() 
+    {
+        newPosition = new Vector2(770f, 0f);
+        Gazebar.anchoredPosition = newPosition;
+    }
+
     public void startbtnmove()
     {
         newPosition = new Vector2(0f, 100f);
@@ -163,5 +191,7 @@ public class R_stone_1 : MonoBehaviour
         mainscript.Rturn++;
         startbtnmove();
         updownbtndown();
+        ReturnTopValue();
+        Gazeon();
     }
 }
