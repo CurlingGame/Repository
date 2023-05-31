@@ -109,7 +109,7 @@ public class Mainscript : MonoBehaviour
 
         Debug.Log("start");
     }
-
+    // 상시 작동
     void Update()
     {
         if ((turncolor == "Red") && (Rturn < 7)) {
@@ -130,7 +130,7 @@ public class Mainscript : MonoBehaviour
         }
 
     }
-
+    
     void FixedUpdate() // 0.02초에 한번씩 작동 == 1초에 50번 작동한다
     {
         if ((turncolor == "Red") && (Rturn < 7)) {
