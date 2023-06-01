@@ -13,7 +13,7 @@ public class sound : MonoBehaviour
     {
         float sound = slider.value;
 
-        if (sound == -40f) masterMixer.SetFloat("BGM", -80); //sound가 -40일 경우, -80으로 설정(사운드 off상태)
+        if (sound == -30f) masterMixer.SetFloat("BGM", -80); //sound가 -30일 경우, -80으로 설정(사운드 off상태)
         else masterMixer.SetFloat("BGM", sound);
     }
 
@@ -21,7 +21,7 @@ public class sound : MonoBehaviour
     {
         float sound = slider.value;
 
-        if (sound == -40f) masterMixer.SetFloat("Sound Effect", -80); //sound가 -40일 경우, -80으로 설정(사운드 off상태)
+        if (sound == -25f) masterMixer.SetFloat("Sound Effect", -80); //sound가 -25일 경우, -80으로 설정(사운드 off상태)
         else masterMixer.SetFloat("Sound Effect", sound);
     }
 
