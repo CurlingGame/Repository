@@ -9000,9 +9000,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\n\nSTART \uBC84\uD2BC\uC744 \uD638\uADF8\uB77C\uC778(\uBE68\uAC04 \uC120)\uAE4C\uC9C0
-    \uAFB9 \uB20C\uB7EC \uC138\uAE30\uB97C \uC870\uC808\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.
-    \uC624\uB798 \uB204\uB97C\uC218\uB85D \uC138\uAE30\uAC00 \uC99D\uAC00\uD569\uB2C8\uB2E4.\n\n"
+  m_Text: "\n\nSTART \uBC84\uD2BC\uC744 Best(\uB178\uB780\uBC15\uC2A4)\uC5D0 \uC704\uCE58\uD558\uB3C4\uB85D
+    \n\uB20C\uB7EC\uC90D\uB2C8\uB2E4.\n\n"
 --- !u!222 &1664272639
 CanvasRenderer:
   m_ObjectHideFlags: 0
