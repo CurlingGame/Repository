@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 
 public class MainMenu : MonoBehaviour
-{ 
+{
     public GameObject MainPanel;
     public GameObject SettingPanel;
 
@@ -19,14 +19,10 @@ public class MainMenu : MonoBehaviour
 
 
 
-
-
-
     public void OnClickGameStart()
     {
         SceneManager.LoadScene("Ingame Scene");
     }
-
 
     public void OnClickGameRule()
     {

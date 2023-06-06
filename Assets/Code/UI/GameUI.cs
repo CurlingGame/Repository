@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour
 {
+    public GameObject Choice;
+    public GameObject ChoiceVS;
+    public GameObject ChoiceCPU;
 
     public GameObject HouseCam; 
     public GameObject FrontCam;
@@ -28,6 +31,19 @@ public class GameUI : MonoBehaviour
     public Vector2 newPosition;
 
     Mainscript mainscript;
+
+    public void OnClickChoiceVS()
+    {
+        Choice.SetActive(false);
+        mainscript = GameObject.Find("Sheet").GetComponent<Mainscript>();
+        mainscript.CPU = false;
+    }
+    public void OnClickChoiceCPU()
+    {
+        Choice.SetActive(false);
+        mainscript = GameObject.Find("Sheet").GetComponent<Mainscript>();
+        mainscript.CPU = true;
+    }
 
     public void Gazedown()
     {

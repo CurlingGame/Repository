@@ -100,6 +100,9 @@ public class R_stone_1 : MonoBehaviour
         {
             rb.AddForce(Vector3.right * 40f);
             ChangeTopValue();
+            if (mainscript.Time > 150) {
+                rb.AddForce(Vector3.right * 300f);
+            }
         }
 
         // B ÁöÁ¡

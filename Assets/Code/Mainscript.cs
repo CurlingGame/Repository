@@ -4,8 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class Mainscript : MonoBehaviour
 {
+    public bool CPU = false;
+
     public GameObject Broom;
 
     public GameObject Rstone_1;
@@ -35,6 +38,8 @@ public class Mainscript : MonoBehaviour
 
     public int[] rscore = { 0, 0, 0, 0 };
     public int[] bscore = { 0, 0, 0, 0 };
+    public int R1;
+    public int R2;
     public int totalrscore;
     public int totalbscore;
     public Text EndText;
@@ -133,17 +138,65 @@ public class Mainscript : MonoBehaviour
     
     void FixedUpdate() // 0.02초에 한번씩 작동 == 1초에 50번 작동한다
     {
+        if (Timechk) { Time++; }
+
         if ((turncolor == "Red") && (Rturn < 7)) {
+            R1 = Random.Range(1, 7);
+            R2 = Random.Range(1, 4);
             Red[Rturn].SendMessage("GetReady");
             Red[Rturn].SendMessage("Throw");
         }
-        if ((turncolor == "Blue") && (Bturn < 7)) {
+
+        if ((turncolor == "Blue") && (Bturn < 7) && !CPU) {
             Blue[Bturn].SendMessage("GetReady");
             Blue[Bturn].SendMessage("Throw");
         }
-        if (Timechk) { Time++; }
+
+        if ((turncolor == "Blue") && (Bturn < 7) && CPU)
+        {
+            CPUUI();
+            CPUAI();
+            Blue[Bturn].SendMessage("GetReady");
+            Blue[Bturn].SendMessage("Throw");
+        }
     }
 
+    void CPUUI() 
+    {
+        newPosition = new Vector2(0f, -700f);
+        startbtn.anchoredPosition = newPosition;
+        newPosition = new Vector2(300f, 1500f);
+        upbtn.anchoredPosition = newPosition;
+        newPosition = new Vector2(-300f, 1500f);
+        downbtn.anchoredPosition = newPosition;
+    }
+
+    void CPUAI() 
+    {
+        Debug.Log(R1);
+        Debug.Log(R2);
+        Timechk = true;
+        inputstart = true;
+        if (R1 == 2) { if (Time > 140) { inputstart = false; } }
+        if (R1 == 3) { if (Time > 160) { inputstart = false; } }
+        else { if (Time > 147) { inputstart = false; } }
+
+        if (Time == 160) {
+            play = false;
+        }
+
+        if (Time % 20 == 0)
+        {
+            if (R2 == 1) { inputup = true; }
+            if (R2 == 2) { inputdown = true; }
+            if (R2 == 3) {}
+        }
+        else 
+        {
+            inputup = false;
+            inputdown = false;
+        }
+    }
 
     void calc()
     {
